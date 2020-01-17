@@ -1,0 +1,7 @@
+body{
+    margin-top: 5px;
+    background-image:url("/assets/home.jpg");
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+
