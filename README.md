@@ -8,4 +8,19 @@ Backend Status
 
 
 
-Frontend Status
+
+
+
+controllers - rest
+	account
+		-login
+		-register
+
+	Book
+		-getAllBooks (all)
+		-searchBook
+		
+	Cart
+		-view
+		-checkout()//new field in user table
+		
