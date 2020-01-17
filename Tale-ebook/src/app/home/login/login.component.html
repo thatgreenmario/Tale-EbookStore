@@ -1,16 +1,25 @@
-
-<div>  
   <mat-card class="loginForm">
-  <form >
-    <mat-form-field appearance="legacy">
+    
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+
+
+    <mat-form-field>
       <mat-label>Login</mat-label>
-      <input matInput placeholder="Email-id">
+      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+      <!-- <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error> -->
     </mat-form-field>
+    
     <span></span>
-    <mat-form-field appearance="legacy">
+    
+    <mat-form-field>
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password">
+        <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+        <!--  <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error> -->
       </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Login</button>
+
     </form>
+
   </mat-card>
-</div>
+
+      
