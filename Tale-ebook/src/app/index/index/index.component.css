@@ -1,0 +1,13 @@
+.loginSignup{
+
+    float: right;
+}
+
+
+
+#btn{
+    position:absolute; 
+    padding: 25px;
+    
+    top:20%;
+}
