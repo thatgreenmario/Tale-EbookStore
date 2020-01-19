@@ -28,11 +28,17 @@ public class BookController {
 		return service.getAllBooks();
 	}
 	
+	//to reimplemented
 	@RequestMapping(value="/search/{id}")
 	@ResponseBody
 	public Book searchForBook(@PathVariable("id") String bookname) {
 		return service.getBookByName(bookname);
-		//return "path var" + bookname;
+	}
+	
+	@RequestMapping(value="/search/isbn/{isbn}")
+	@ResponseBody
+	public Book searchbByISBN(@PathVariable("isbn") String isbnnumber) {
+		return service.getBookByISBN(isbnnumber);
 	}
 
 }

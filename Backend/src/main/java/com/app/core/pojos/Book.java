@@ -13,7 +13,8 @@ public class Book {
 	private Integer id;
 	private String title;
 	private String author;
-	private Integer number;
+	private Integer quantity;
+	private Integer price;
 	private String genre;
 	private String publication;
 	private String language;
@@ -30,12 +31,15 @@ public class Book {
 	}
 
 	// Parameterized constructor
-	public Book(String title, String author, Integer number, String genre, String publication, String language,
-			String description, String imagepath, String bookpath, String booktrailer, String isbn) {
+	public Book(Integer id, String title, String author, Integer quantity, Integer price, String genre,
+			String publication, String language, String description, String imagepath, String bookpath,
+			String booktrailer, String isbn) {
 		super();
+		this.id = id;
 		this.title = title;
 		this.author = author;
-		this.number = number;
+		this.quantity = quantity;
+		this.price = price;
 		this.genre = genre;
 		this.publication = publication;
 		this.language = language;
@@ -52,6 +56,8 @@ public class Book {
 	public Integer getId() {
 		return id;
 	}
+
+	
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -73,13 +79,6 @@ public class Book {
 		this.author = author;
 	}
 
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
 
 	public String getGenre() {
 		return genre;
@@ -144,15 +143,34 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
+	
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", number=" + number + ", genre=" + genre
-				+ ", publication=" + publication + ", language=" + language + ", description=" + description
-				+ ", imagepath=" + imagepath + ", bookpath=" + bookpath + ", booktrailer=" + booktrailer + ", isbn="
-				+ isbn + "]";
-	}
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", quantity=" + quantity + ", price="
+				+ price + ", genre=" + genre + ", publication=" + publication + ", language=" + language
+				+ ", description=" + description + ", imagepath=" + imagepath + ", bookpath=" + bookpath
+				+ ", booktrailer=" + booktrailer + ", isbn=" + isbn + "]";
+	
 
 	
+
+	}
 	
 }
