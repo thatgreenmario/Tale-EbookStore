@@ -21,7 +21,6 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
-    "angular": "^1.7.9",
     "angular-material-source": "github:angular/material",
     "bootstrap": "^4.4.1",
     "hammerjs": "^2.0.8",

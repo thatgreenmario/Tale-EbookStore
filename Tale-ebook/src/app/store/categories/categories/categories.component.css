@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+    padding: 10;
+    margin: 10;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  ul {
+    display: flex;
+  }
+
+  mat-toolbar{
+
+    border : grey solid 0.5px;
+    
+  }
