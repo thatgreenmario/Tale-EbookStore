@@ -1,4 +1,4 @@
-package pojos;
+package com.app.core.pojos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -77,9 +77,6 @@ public class User {
 		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
 				+ ", password=" + password + "]";
 	}
-	
-	
-	
 	
 	
 	

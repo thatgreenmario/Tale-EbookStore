@@ -1,4 +1,4 @@
-package utils;
+package com.app.core.utils;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;

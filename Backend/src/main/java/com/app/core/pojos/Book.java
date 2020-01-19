@@ -1,4 +1,4 @@
-package pojos;
+package com.app.core.pojos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 public class Book {
-	
+
 	private Integer id;
 	private String title;
 	private String author;
@@ -21,16 +21,17 @@ public class Book {
 	private String imagepath;
 	private String bookpath;
 	private String booktrailer;
-	
-	//Default Constructor
+	private String isbn;
+
+	// Default Constructor
 	public Book() {
 		super();
-		
+
 	}
-	
-	//Parameterized constructor
-	public Book(String title, String author, Integer number, String genre, String publication,
-			String language, String description, String imagepath, String bookpath, String booktrailer) {
+
+	// Parameterized constructor
+	public Book(String title, String author, Integer number, String genre, String publication, String language,
+			String description, String imagepath, String bookpath, String booktrailer, String isbn) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -42,10 +43,10 @@ public class Book {
 		this.imagepath = imagepath;
 		this.bookpath = bookpath;
 		this.booktrailer = booktrailer;
+		this.isbn = isbn;
 	}
-	
-	
-	//Getters and setters
+
+	// Getters and setters
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
@@ -136,10 +137,22 @@ public class Book {
 		this.booktrailer = booktrailer;
 	}
 
+	public String getIsbn() {
+		return isbn;
+	}
 	
-	
-	
-	
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", number=" + number + ", genre=" + genre
+				+ ", publication=" + publication + ", language=" + language + ", description=" + description
+				+ ", imagepath=" + imagepath + ", bookpath=" + bookpath + ", booktrailer=" + booktrailer + ", isbn="
+				+ isbn + "]";
+	}
+
 	
 	
 }

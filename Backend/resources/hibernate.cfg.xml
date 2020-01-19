@@ -19,8 +19,8 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		<mapping class="pojos.User"/>
-		<mapping class="pojos.Book"/>
+		<mapping class="com.app.pojos.User"/>
+		<mapping class="com.app.pojos.Book"/>
 	
 	</session-factory>
 </hibernate-configuration>
