@@ -18,20 +18,20 @@ public class UserController {
 	IUserServices service;
 	
 	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
-	public ResponseEntity<?> authenticate(@RequestBody User user)
+	public ResponseEntity<?> authenticateService(@RequestBody User user)
 	{
 		User temp=service.authenticate(user);
 		
 		if(temp!=null)
 		{
-			return new ResponseEntity<User>(user,HttpStatus.OK);
+			return new ResponseEntity<User>(temp,HttpStatus.OK);
 		}
 		
 		return new ResponseEntity<String>("Authentication Failed : Invalid credentials",HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/authenticate",method=RequestMethod.POST)
-	public ResponseEntity<?> register(@RequestBody User user)
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	public ResponseEntity<?> registerService(@RequestBody User user)
 	{
 		Boolean status=service.register(user);
 		
