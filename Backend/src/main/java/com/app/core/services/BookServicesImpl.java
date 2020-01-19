@@ -34,13 +34,21 @@ public class BookServicesImpl implements IBookServices {
 		if (option.isPresent()) {
 			return option.get();
 		}
+		
+		//method to search by isbn number
+		
+		Book temp1 = new Book();
+		temp1.setIsbn(bookName);
+		
+		Example<Book> examplebook1 = Example.of(temp1);
+		Optional<Book> option1 = dao.findOne(examplebook1);
+		
+		if (option1.isPresent()) {
+			return option1.get();
+		}
+		
+		
 
-		return null;
-	}
-
-	@Override
-	public Book getBookByIsbn(String isbnNum) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

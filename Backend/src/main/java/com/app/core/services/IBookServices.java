@@ -7,5 +7,5 @@ import com.app.core.pojos.Book;
 public interface IBookServices {
 	List<Book> getAllBooks();
 	Book getBookByName(String bookName);
-	Book getBookByIsbn(String isbnNum);
+
 }
