@@ -20,7 +20,7 @@ private isAuthenticated = false;
     //dummy data before integration with backend
     const authData = { email: email, password: password };
 
-    if(email=="abc@gmail.com" && password=="abc123")
+    if(email=="abc@gmail.com" && password=="123456789")
     return true;
     else
     return false;

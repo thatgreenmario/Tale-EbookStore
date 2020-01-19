@@ -1,10 +1,13 @@
 .loginForm{
 
     margin-top: 10px;
-       
+    
+    border: grey solid  0.5px;
+        
 }
 
 span {
     margin-left: 30px;
 }
+
 

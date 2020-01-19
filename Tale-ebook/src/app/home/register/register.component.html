@@ -1,47 +1,39 @@
 <div class="registerForm">
-   <mat-card>
-      <h2>CREATE YOUR TALE ACCOUNT NOW!</h2>
-      <form (submit)="onRegister(RegisterForm)" #RegisterForm="ngForm" method="post">
-         <mat-form-field class="full-width">
-            <mat-label>First Name</mat-label>
-            <input matInput name="fname" ngModel type="fname" placeholder="First Name" #fnameInput="ngModel" required>
-            <!-- <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error> -->
-            </mat-form-field>
-            <br>
-            <mat-form-field class="full-width">
-               <mat-label>Last Name</mat-label>
-               <input matInput name="lname" ngModel type="lname" placeholder="Last Name" #lnameInput="ngModel" required>
-               <!--  <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error> -->
-            </mat-form-field>
-            <br>
-            <mat-form-field class="full-width">
-               <mat-label>Email</mat-label>
-               <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required
-                  email>
-               <!-- <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error> -->
-            </mat-form-field>
-            <br>
-            <mat-form-field class="full-width">
-               <mat-label>Password</mat-label>
-               <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
-                  required>
-               <!-- <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error> -->
-            </mat-form-field>
-            <br>
-            <mat-form-field class="full-width">
-               <mat-label>Confirm Password</mat-label>
-               <input type="password" name="cpassword" ngModel matInput placeholder="Confirm Password"
-                  #cpasswordInput="ngModel" required>
-               <!-- <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error> -->
-            </mat-form-field>
-            <br>
-
-            <br>
-            <button type="submit" mat-raised-button color="accent">Join TALE</button>
-      </form>
-      <br>
-      <h4>Or Login with</h4>
-      <img src="/assets/FB.svg">
-      <img src="/assets/google.svg">
-   </mat-card>
-</div>
+    <mat-card>
+       <h2>CREATE YOUR TALE ACCOUNT NOW!</h2>
+       <form (submit)="onRegister(RegisterForm)" #RegisterForm="ngForm" method="post">
+          <mat-form-field class="full-width">
+             <mat-label>First Name</mat-label>
+             <input matInput name="fname" ngModel type="fname" placeholder="First Name" #fnameInput="ngModel" required>
+             <mat-error *ngIf="fnameInput.invalid">Please enter a valid Name.</mat-error>
+             </mat-form-field>
+             <br>
+             <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput name="lname" ngModel type="lname" placeholder="Last Name" #lnameInput="ngModel" required>
+                 <mat-error *ngIf="lnameInput.invalid">Please enter a valid Name.</mat-error>
+             </mat-form-field>
+             <br>
+             <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required
+                   email>
+                <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+             </mat-form-field>
+             <br>
+             <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
+                   required>
+                <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+             </mat-form-field>
+             <br>
+             <br>
+             <button type="submit" mat-raised-button color="accent">Join TALE</button>
+       </form>
+       <br>
+       <h4>Or Login with</h4>
+       <img src="/assets/FB.svg">
+       <img src="/assets/google.svg">
+    </mat-card>
+ </div>
