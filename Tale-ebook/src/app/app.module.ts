@@ -14,6 +14,8 @@ import { IndexComponent } from './index/index/index.component';
 import { BookListComponent } from './store/book-list/book-list.component';
 import { CategoriesComponent } from './store/categories/categories/categories.component';
 import { StoreComponent } from './store/store.component';
+import { MyBookListComponent } from './library/my-book-list/my-book-list.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { StoreComponent } from './store/store.component';
     BookListComponent,
     CategoriesComponent,
     StoreComponent,
+    MyBookListComponent,
+    LibraryComponent,
   ],
   imports: [
     BrowserModule,

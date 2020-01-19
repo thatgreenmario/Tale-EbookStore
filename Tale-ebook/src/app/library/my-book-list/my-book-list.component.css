@@ -1,0 +1,18 @@
+mat-grid-tile{
+
+    border: black solid 1px;
+    border-radius: 20px;
+  }
+  
+  mat-grid-list
+  {
+  
+  margin: 50px;
+  }
+  
+  mat-paginator{
+   color:crimson}
+
+   .button{
+     text-align: center;
+   }
