@@ -4,17 +4,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.xml.txw2.annotation.XmlAttribute;
 
 @Entity
 @Table
+@XmlRootElement
 public class Book {
 
 	private Integer id;
 	private String title;
-	private String author;
+	
+	private Authors author;
 	private Integer quantity;
 	private Integer price;
+	private String rating;
 	private String genre;
 	private String publication;
 	private String language;
@@ -31,7 +42,9 @@ public class Book {
 	}
 
 	// Parameterized constructor
-	public Book(Integer id, String title, String author, Integer quantity, Integer price, String genre,
+	
+
+	public Book(Integer id, String title, Authors author, Integer quantity, Integer price, String rating, String genre,
 			String publication, String language, String description, String imagepath, String bookpath,
 			String booktrailer, String isbn) {
 		super();
@@ -40,6 +53,7 @@ public class Book {
 		this.author = author;
 		this.quantity = quantity;
 		this.price = price;
+		this.rating = rating;
 		this.genre = genre;
 		this.publication = publication;
 		this.language = language;
@@ -49,15 +63,13 @@ public class Book {
 		this.booktrailer = booktrailer;
 		this.isbn = isbn;
 	}
-
+	
 	// Getters and setters
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
-
-	
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -71,11 +83,14 @@ public class Book {
 		this.title = title;
 	}
 
-	public String getAuthor() {
+	@ManyToOne
+	@JoinColumn(name = "author_id")
+	@XmlAttribute @XmlIDREF
+	public Authors getAuthor() {
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(Authors author) {
 		this.author = author;
 	}
 
@@ -159,18 +174,22 @@ public class Book {
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
+	
+	public String getRating() {
+		return rating;
+	}
 
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
 
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", quantity=" + quantity + ", price="
-				+ price + ", genre=" + genre + ", publication=" + publication + ", language=" + language
-				+ ", description=" + description + ", imagepath=" + imagepath + ", bookpath=" + bookpath
+				+ price + ", rating=" + rating + ", genre=" + genre + ", publication=" + publication + ", language="
+				+ language + ", description=" + description + ", imagepath=" + imagepath + ", bookpath=" + bookpath
 				+ ", booktrailer=" + booktrailer + ", isbn=" + isbn + "]";
-	
-
-	
+	}	
 
 	}
-	
-}
+

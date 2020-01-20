@@ -1,17 +1,24 @@
 package com.app.core.pojos;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table
 public class User {
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String firstname,lastname,email,password;
+	@OneToMany(mappedBy = "user")
+	private List<UserHistory> userHistory;
 
 	 //Default Constructor
 	public User() {   
@@ -29,8 +36,7 @@ public class User {
 	}
 	
 	//Getters and Setters
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	public Integer getId() {
 		return id;
 	}
@@ -69,6 +75,19 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public List<UserHistory> getUserHistory() {
+		return userHistory;
+	}
+
+	public void setUserHistory(Integer bookid)
+	{
+		UserHistory temp = new UserHistory(bookid);
+		temp.setUser(this);
+		
+		userHistory.add(temp);
+		
 	}
 
 	//toString
