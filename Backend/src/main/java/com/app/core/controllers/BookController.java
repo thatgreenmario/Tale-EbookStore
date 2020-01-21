@@ -1,10 +1,6 @@
 package com.app.core.controllers;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathExpressionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +12,12 @@ import org.xml.sax.SAXException;
 
 import com.app.core.pojos.Book;
 import com.app.core.services.IBookServices;
+
+import java.io.IOException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
+
 
 @RestController
 public class BookController {
@@ -30,7 +32,7 @@ public class BookController {
 
 	@GetMapping("/getall")
 	@ResponseBody 
-	public List<Book> getAllBooks() {
+	public List<Book> getAllBooks() throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
 		return service.getAllBooks();
 	}
 	
@@ -41,10 +43,10 @@ public class BookController {
 		return service.getBookByName(bookname);
 	}
 	
+
 	@RequestMapping(value="/search/isbn/{isbn}")
 	@ResponseBody
 	public Book searchbByISBN(@PathVariable("isbn") String isbnnumber) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
 		return service.getBookByISBN(isbnnumber);
 	}
-
 }

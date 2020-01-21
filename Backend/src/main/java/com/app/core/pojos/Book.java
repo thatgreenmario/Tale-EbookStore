@@ -42,13 +42,11 @@ public class Book {
 	}
 
 	// Parameterized constructor
-	
-
-	public Book(Integer id, String title, Authors author, Integer quantity, Integer price, String rating, String genre,
+	public Book(String title, Authors author, Integer quantity, Integer price,String rating, String genre,
 			String publication, String language, String description, String imagepath, String bookpath,
 			String booktrailer, String isbn) {
 		super();
-		this.id = id;
+		
 		this.title = title;
 		this.author = author;
 		this.quantity = quantity;
@@ -63,13 +61,15 @@ public class Book {
 		this.booktrailer = booktrailer;
 		this.isbn = isbn;
 	}
-	
+
 	// Getters and setters
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
+
+	
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -174,7 +174,8 @@ public class Book {
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-	
+
+
 	public String getRating() {
 		return rating;
 	}
@@ -189,7 +190,8 @@ public class Book {
 				+ price + ", rating=" + rating + ", genre=" + genre + ", publication=" + publication + ", language="
 				+ language + ", description=" + description + ", imagepath=" + imagepath + ", bookpath=" + bookpath
 				+ ", booktrailer=" + booktrailer + ", isbn=" + isbn + "]";
-	}	
-
 	}
 
+	
+	
+}
