@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { format } from 'url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  isLoggedIn = false;
+  redirectUrl: string;
 
 
 private isAuthenticated = false;
@@ -22,10 +23,11 @@ private isAuthenticated = false;
     const authData = { email: email, password: password };
 
     if(email=="johndoe@gmail.com" && password=="johnDoe1234")
-    return true;
+   { this.isLoggedIn=true;
+     return true;}
     else
     return false;
-        }
+  }
 
 
 createUser(fname:string,lname:string,email:string,password:string){
@@ -54,6 +56,10 @@ return "Old Password does not match!!";
 
 changeDetails(fname:string, lname:string){
 return "Details Changed Successfully!!"
+}
+
+logout(): void {
+  this.isLoggedIn = false;
 }
 
 }

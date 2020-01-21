@@ -7,15 +7,18 @@ import { CartComponent } from './cart/cart.component';
 import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { UpdatePasswordComponent } from './user/update-password/update-password.component';
 import { UpdateUserDetailsComponent } from './user/update-user-details/update-user-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './home/auth.guard';
 
 const routes: Routes = [
   { path: "", component: IndexComponent },
   { path: "store", component: StoreComponent },
-  { path: "library", component: LibraryComponent },
+  { path: "library", component: LibraryComponent , canActivate: [AuthGuard]},
   { path: "cart", component: CartComponent },
-  { path: "updateUser", component: UpdateUserComponent },
-  {path: "updateUserDetails" , component: UpdateUserDetailsComponent},
-  {path: "updatePassword" , component: UpdatePasswordComponent}
+  { path: "updateUser", component: UpdateUserComponent  ,canActivate: [AuthGuard]},
+  {path: "updateUserDetails" , component: UpdateUserDetailsComponent,canActivate: [AuthGuard]},
+  {path: "updatePassword" , component: UpdatePasswordComponent,canActivate: [AuthGuard]},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

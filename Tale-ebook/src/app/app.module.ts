@@ -21,6 +21,7 @@ import { UpdateUserComponent } from './user/update-user/update-user.component';
 import { UpdatePasswordComponent } from './user/update-password/update-password.component';
 import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
 import { UpdateUserDetailsComponent } from './user/update-user-details/update-user-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UpdateUserDetailsComponent } from './user/update-user-details/update-us
     UpdateUserComponent,
     UpdatePasswordComponent,
     UpdateUserDetailsComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
