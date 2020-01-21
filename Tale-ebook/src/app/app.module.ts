@@ -16,6 +16,11 @@ import { CategoriesComponent } from './store/categories/categories/categories.co
 import { StoreComponent } from './store/store.component';
 import { MyBookListComponent } from './library/my-book-list/my-book-list.component';
 import { LibraryComponent } from './library/library.component';
+import { CartComponent } from './cart/cart.component';
+import { UpdateUserComponent } from './user/update-user/update-user.component';
+import { UpdatePasswordComponent } from './user/update-password/update-password.component';
+import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
+import { UpdateUserDetailsComponent } from './user/update-user-details/update-user-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,10 @@ import { LibraryComponent } from './library/library.component';
     StoreComponent,
     MyBookListComponent,
     LibraryComponent,
+    CartComponent,
+    UpdateUserComponent,
+    UpdatePasswordComponent,
+    UpdateUserDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +47,7 @@ import { LibraryComponent } from './library/library.component';
     AngularMaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    FlashMessagesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

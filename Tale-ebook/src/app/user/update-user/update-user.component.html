@@ -1,0 +1,21 @@
+<mat-grid-list cols="12" rowHeight="2:1">
+    <mat-grid-tile  [colspan]="1" [rowspan]="2"></mat-grid-tile>
+    <mat-grid-tile  [colspan]="10" [rowspan]="5">        
+    <mat-card>
+        <mat-list role="list">
+            <mat-list-item role="listitem">
+                <p>First Name: <strong> {{ user.firstName }}</strong> </p>     
+            </mat-list-item>
+        
+            <mat-list-item>
+                <p>Last Name: <strong> {{ user.lastName }}</strong> </p>              
+            </mat-list-item>        
+            <mat-list-item>
+                <a  mat-raised-button color="accent" routerLink="/updateUserDetails" >Edit Name</a>
+                <a  mat-raised-button color="accent" routerLink="/updatePassword">Change Password</a>
+           </mat-list-item>        
+        </mat-list>
+    </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile  [colspan]="1" [rowspan]="2"></mat-grid-tile>
+</mat-grid-list>

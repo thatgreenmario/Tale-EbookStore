@@ -24,7 +24,7 @@
              <mat-form-field class="full-width">
                 <mat-label>Password</mat-label>
                 <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
-                   required>
+                   required minlength="8">
                 <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
              </mat-form-field>
              <br>

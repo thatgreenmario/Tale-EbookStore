@@ -1,0 +1,11 @@
+.cartTitle{
+
+color: crimson;
+text-align: center;
+}
+
+mat-card{
+
+    background-color: rgb(238, 229, 229);
+    margin-top: 20px;
+}

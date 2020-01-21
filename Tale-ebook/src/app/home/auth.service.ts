@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { format } from 'url';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ private isAuthenticated = false;
     //dummy data before integration with backend
     const authData = { email: email, password: password };
 
-    if(email=="abc@gmail.com" && password=="123456789")
+    if(email=="johndoe@gmail.com" && password=="johnDoe1234")
     return true;
     else
     return false;
@@ -29,10 +30,30 @@ private isAuthenticated = false;
 
 createUser(fname:string,lname:string,email:string,password:string){
 
+  if(email=="johndoe@gmail.com")
+  {
+  alert(email +" is already a Tale Member! Please Login");
+  return false;  
+}
+  else
   alert("User created:"+fname +"  "+lname+"  "+ email+"  "+password );
   return true;
 }
 
 
+changePassword(oldPassword:string, newPassword:string){
+ 
+ if(oldPassword==newPassword)
+ return "Old Password and New Password Should not be same!!!";
+  if(oldPassword=="johnDoe1234")
+  return "Password Changed Successfully!";
+else
+return "Old Password does not match!!";
+}
+      
 
-      }
+changeDetails(fname:string, lname:string){
+return "Details Changed Successfully!!"
+}
+
+}
