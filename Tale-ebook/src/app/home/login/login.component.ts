@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,16 +10,21 @@ import { AuthService } from '../auth.service';
 })
 
 export class LoginComponent  {
-  isLoading = false;
-
-  constructor(public authService: AuthService) {}
+  
+  constructor(public authService: AuthService,private router: Router) {}
 
   onLogin(form: NgForm) {
     
     if (form.invalid) {
       return;
     }
-    alert( "Login "+this.authService.login(form.value.email, form.value.password));
+    
+    if(this.authService.login(form.value.email, form.value.password)==false)
+    alert( "Username or Password is Incorrect Please Try Again!");
+    
+    else
+    this.router.navigate(['/store']);
+
   }
 
 }

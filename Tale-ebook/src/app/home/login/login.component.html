@@ -11,15 +11,13 @@
     
     <span></span>
     
-    <mat-form-field>
+  <mat-form-field>
         <mat-label>Password</mat-label>
         <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required minlength="8">
          <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="accent" type="submit">Login</button>
-
+      <button mat-raised-button color="accent" type="submit" >Login</button>
     </form>
-
   </mat-card>
 
       

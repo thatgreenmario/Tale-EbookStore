@@ -17,7 +17,11 @@ export class RegisterComponent {
     if (form.invalid) {
       return;
     }
-    this.authService.createUser(form.value.fname, form.value.lname, form.value.email, form.value.password);
+    if(this.authService.createUser(form.value.fname, form.value.lname, form.value.email, form.value.password)==false)
+      form.resetForm();
+    else 
+     return;
   }
+
 
 }

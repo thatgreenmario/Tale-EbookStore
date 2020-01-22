@@ -1,0 +1,37 @@
+<mat-grid-list cols="12" rowHeight="2:1">
+    <mat-grid-tile  [colspan]="1" [rowspan]="2"></mat-grid-tile>
+    <mat-grid-tile  [colspan]="10" [rowspan]="10">        
+
+<mat-card>
+       <h2>Change Details</h2>
+       <form (submit)="onChangeDetails(ChangeForm)" #ChangeForm="ngForm" method="post">
+
+        <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input type="text" name="fname" ngModel matInput placeholder="First Name" #fnameInput="ngModel" required>
+                <mat-error *ngIf="fnameInput.invalid">Please enter a valid Name.</mat-error>
+        </mat-form-field>
+        
+        <br>
+         <br>
+         
+        <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input type="text" name="lname" ngModel matInput placeholder="Last Name" #lnameInput="ngModel" required>
+            <mat-error *ngIf="lnameInput.invalid">Please enter a valid Name.</mat-error>
+    </mat-form-field>
+    <br>
+        <br>
+             <button type="submit" mat-raised-button color="accent">Change Details</button>
+
+            
+            </form>
+<flash-messages></flash-messages>          
+            <br>
+    </mat-card>
+
+</mat-grid-tile>
+<mat-grid-tile  [colspan]="1" [rowspan]="2"></mat-grid-tile>
+</mat-grid-list>
+
+
