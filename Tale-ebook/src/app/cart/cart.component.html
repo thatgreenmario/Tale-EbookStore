@@ -22,7 +22,7 @@
     </td>
     <td>{{book.price}}</td>
    <td>
-    <button  mat-raised-button color="accent">Remove From Cart</button>
+    <button  mat-raised-button color="accent" (click)="onRemoveFromCart($event,book)">Remove From Cart</button>
    </td>
     <mat-divider></mat-divider>
   </tr>
