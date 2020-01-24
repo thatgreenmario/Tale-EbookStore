@@ -11,7 +11,8 @@ import {
   MatIconModule,
   MatGridListModule,
   MatTableModule,
-  MatListModule
+  MatListModule,
+  MatDividerModule,
 
 } from "@angular/material";
 
@@ -28,7 +29,8 @@ import {
     MatIconModule,
     MatGridListModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatDividerModule
   ]
 })
 export class AngularMaterialModule {}

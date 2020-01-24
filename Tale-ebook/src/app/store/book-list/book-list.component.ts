@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/app/books/book.model';
+import { BookService } from 'src/app/book.service';
 
 @Component({
   selector: 'app-book-list',
@@ -123,6 +124,10 @@ booktrailer: "https://www.youtube.com/watch?v=MqnF1I4oDVc",
 ISBN: "9780241334140"
 }];
 
+onAddToCart(event,book)
+{
+ BookService.addToCart(book);  
+}
 
 
 }

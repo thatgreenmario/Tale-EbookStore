@@ -2,7 +2,7 @@
 
 
   <mat-grid-list cols="4" rowHeight="450px" gutterSize="50px" >
-    <mat-grid-tile *ngFor="let book of books">
+    <mat-grid-tile *ngFor="let book of books" >
         <mat-card>
             <img mat-card-image src={{book.imagePath}} alt="Photo of a Shiba Inu">
            <mat-card-content>
@@ -17,7 +17,7 @@
            </mat-card-content>
 		    <mat-card-actions>
           <div class="button">
-             <button mat-raised-button color="accent">Add To Cart</button>
+             <button mat-raised-button color="accent" (click)="onAddToCart($event, book)" >Add To Cart</button>
              <button mat-raised-button color="primary">Buy Now</button>
              <button mat-button color="accent">Price: ₹{{ book.price }}</button>     
             </div>
