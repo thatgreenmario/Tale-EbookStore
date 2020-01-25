@@ -18,7 +18,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathException;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
@@ -57,14 +56,15 @@ public class BookServicesImpl implements IBookServices {
 		Optional<Book> option = dao.findOne(examplebook);
 		Book temp2 = option.get();
 
-		HashMap<Integer, String> tempmap = getDescriptionByGoodreads(isbnnumber);
-
 		// temp2.setDescription(getDescriptionByGoodreads(isbnnumber));
 		if (option.isPresent()) {
-			if (temp2.getRating() == null)
+			if (temp2.getRating() == null && temp2.getDescription() == null) {
+
+				HashMap<Integer, String> tempmap = getDescriptionByGoodreads(isbnnumber);
 				temp2.setRating(tempmap.get(1)); // new field rating need to be added
-			if (temp2.getDescription() == null)
+
 				temp2.setDescription(tempmap.get(2));
+			}
 			return temp2;
 		}
 
@@ -109,13 +109,12 @@ public class BookServicesImpl implements IBookServices {
 		List<Book> bookList = (List<Book>) dao.findAll();
 
 		for (Book book : bookList) {
-			if(book.getImagepath()==null)
-			{
+			if (book.getImagepath() == null) {
 				HashMap<Integer, String> tempmap = getDescriptionByGoodreads(book.getIsbn());
-			
-			String imagePath = tempmap.get(3);
-			imagePath = imagePath.replaceAll("\\._(.*)_", "");
-			dao.setBookImagePaths(imagePath, book.getIsbn());
+
+				String imagePath = tempmap.get(3);
+				imagePath = imagePath.replaceAll("\\._(.*)_", "");
+				dao.setBookImagePaths(imagePath, book.getIsbn());
 			}
 		}
 

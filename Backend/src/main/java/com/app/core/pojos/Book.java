@@ -10,8 +10,8 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.springframework.beans.factory.annotation.Value;
+
 import com.sun.xml.txw2.annotation.XmlAttribute;
 
 @Entity
@@ -34,6 +34,7 @@ public class Book {
 	private String bookpath;
 	private String booktrailer;
 	private String isbn;
+	private Integer sold;
 
 	// Default Constructor
 	public Book() {
@@ -44,7 +45,7 @@ public class Book {
 	// Parameterized constructor
 	public Book(String title, Authors author, Integer quantity, Integer price,String rating, String genre,
 			String publication, String language, String description, String imagepath, String bookpath,
-			String booktrailer, String isbn) {
+			String booktrailer, String isbn, Integer sold) {
 		super();
 		
 		this.title = title;
@@ -60,6 +61,7 @@ public class Book {
 		this.bookpath = bookpath;
 		this.booktrailer = booktrailer;
 		this.isbn = isbn;
+		this.sold = sold;
 	}
 
 	// Getters and setters
@@ -182,6 +184,15 @@ public class Book {
 
 	public void setRating(String rating) {
 		this.rating = rating;
+	}
+
+	
+	public Integer getSold() {
+		return sold;
+	}
+
+	public void setSold(Integer sold) {
+		this.sold = sold;
 	}
 
 	@Override
