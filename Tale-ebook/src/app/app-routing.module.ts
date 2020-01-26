@@ -9,18 +9,20 @@ import { StoreComponent } from './book/store/store.component';
 import { LibraryComponent } from './book/library/library.component';
 import { AuthGuard } from './user/auth.guard';
 import { CartComponent } from './book/cart/cart.component';
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
   {path: '', component: HomeComponent},
   { path: "store", component: StoreComponent },
+  { path: "editUserProfile", component: EditProfileComponent },
   //{ path: "author", component: AuthorLoginRegisterComponent },
-  { path: "library", component: LibraryComponent },
+  { path: "library", component: LibraryComponent ,canActivate: [AuthGuard]},
   { path: "cart", component: CartComponent },
-  //{ path: "updateUser", component: UpdateUserComponent  ,canActivate: [AuthGuard]},
-  //{path: "updateUserDetails" , component: UpdateUserDetailsComponent,canActivate: [AuthGuard]},
-  //{path: "updatePassword" , component: UpdatePasswordComponent,canActivate: [AuthGuard]},
+  { path: "prevOrders", component: PrevOrdersComponent  },
 
+  
   //{ path: '**', component: PageNotFoundComponent }
 ];
 

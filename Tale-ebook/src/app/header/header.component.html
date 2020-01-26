@@ -22,10 +22,33 @@
         </li>
         
         
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show ">
-          <a class="nav-link"  routerLink="updateUser" >Account</a>
+        <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show ">
+          <a class="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" routerLink="updateUser" >Account</a>
+          <ul class="dropdown-menu ">
+            <li><a class="dropdown-item" routerLink="editUserProfile">Edit Profile</a></li>
+            <li><a class="dropdown-item" routerLink="prevOrders">See Previous Orders</a></li>
+                </ul> 
         </li>
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item">
        <a routerLink="/cart"> <img src="/assets/icons/cart.svg" alt="" width="32" height="32" title="Cart" > 
        </a>

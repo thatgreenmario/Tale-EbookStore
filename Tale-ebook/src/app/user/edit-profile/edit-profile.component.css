@@ -1,0 +1,27 @@
+
+.page-section {
+    padding: 8rem 0;
+  }
+  
+
+  #leftPanel{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+    color:#fff;
+    text-align: center;
+}
+
+#rightPanel{
+    min-height:415px;
+}
+
+.img-round{
+    padding: 50px;
+    border-radius: 100%;
+    width: 250px;
+    height: 250px;
+}
+
+.btn{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+   color: white; 
+}

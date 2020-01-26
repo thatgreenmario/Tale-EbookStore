@@ -1,0 +1,66 @@
+
+    <section class="page-header" *ngIf="booksPurchased.length>0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Previous Orders</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div >
+        <section class="page-header" *ngIf="booksPurchased.length<1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="empty-cart" >
+                            <h1 class="page-name">No Orders Yet.</h1>
+                            <small>What are you waiting for?</small>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+    
+    
+    <div class="page-wrapper" *ngIf="booksPurchased.length>0">
+        <div class="cart shopping">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12 ">
+                        <div class="cart">
+                        <div class="block">
+                            <div class="product-list">
+                                <form method="post">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="">Book</th>
+                                                <th class=""> Price</th>
+                                               </tr>
+                                        </thead>
+    
+                                        <tbody *ngFor="let book of booksPurchased">
+                                            <tr class="">
+                                                <td class="">
+                                                    <div class="product-info">
+                                                        <img width="80" src="{{book.imagePath}}" alt="" />
+                                                        <a>{{ book.title }} : <small>{{book.author}}</small></a> 
+                                                    </div>
+                                                </td>
+                                                <td class="">₹{{ book.price }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
