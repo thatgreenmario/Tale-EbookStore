@@ -11,32 +11,7 @@ export class BookService {
   constructor( private router: Router) {}
 
 
-  booksInCart : Book[]=[{  id: "book4",
-  title: "Becoming",
-  author: "Michelle Obama",
-  price: 260,
-  genre: "Autobiography",
-  publication:"Viking",
-  Language: "English",
-  Description:"This is a rich, entertaining and candid memoir. And overall she's a fun person to sit alongside as she tells you the story of her life, warts and all. . . it is as beautifully written as any piece of fiction, with a similar warm languid tone to Ann Patchett's novel Commonwealth (Viv Groskop i, Five Stars)" ,
-  imagePath: "assets/images/book4.jpg",
-  bookPath: "assets/pdf/book.pdf",
-  booktrailer: "https://www.youtube.com/watch?v=MqnF1I4oDVc",    
-  ISBN: "9780241334140"
-  },
-  {  id: "book4",
-  title: "Becoming",
-  author: "Michelle Obama",
-  price: 260,
-  genre: "Autobiography",
-  publication:"Viking",
-  Language: "English",
-  Description:"This is a rich, entertaining and candid memoir. And overall she's a fun person to sit alongside as she tells you the story of her life, warts and all. . . it is as beautifully written as any piece of fiction, with a similar warm languid tone to Ann Patchett's novel Commonwealth (Viv Groskop i, Five Stars)" ,
-  imagePath: "assets/images/book4.jpg",
-  bookPath: "assets/pdf/book.pdf",
-  booktrailer: "https://www.youtube.com/watch?v=MqnF1I4oDVc",    
-  ISBN: "9780241334140"
-  }];
+  booksInCart : Book[]=[];
   
    booksInLibrary : Book[]=[{
     id: "book1",

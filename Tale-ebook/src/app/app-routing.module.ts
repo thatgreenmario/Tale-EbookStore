@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   { path: "store", component: StoreComponent },
   //{ path: "author", component: AuthorLoginRegisterComponent },
-  { path: "library", component: LibraryComponent,canActivate: [AuthGuard] },
+  { path: "library", component: LibraryComponent },
   { path: "cart", component: CartComponent },
   //{ path: "updateUser", component: UpdateUserComponent  ,canActivate: [AuthGuard]},
   //{path: "updateUserDetails" , component: UpdateUserDetailsComponent,canActivate: [AuthGuard]},

@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
 
   
   cartTotal =0;
+  discount=0;
   booksInCart : Book[]= this.bookservice.getCartBooks();
 
   ngOnInit() {
