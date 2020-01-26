@@ -1,0 +1,28 @@
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #f4623a;
+  }
+
+  
+  .text-muted {
+    color: #6c757d !important;
+  }
+
+
+  .bg{
+      background-color: black;
+  }
+
+  .page-section {
+    padding: 8rem 0;
+  }
+  
+  .small{
+      background-color: black;
+color: white;
+  }
+
+  .white-text{
+      color: white;
+  }
