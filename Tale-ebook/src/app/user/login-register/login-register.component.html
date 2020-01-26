@@ -1,0 +1,81 @@
+<section class="page-section" >
+<div class='box'>
+    <div class='box-form'>
+       <div class='box-login-tab'></div>
+       <div class='box-login-title'>
+          <div class='i i-login'></div>
+          <h2>LOGIN</h2>
+          <br>
+       </div>
+       <div class='box-login'>
+          <div class='fieldset-body' id='login_form'>
+             <button onclick="openLoginInfo();" class='b b-form i i-more'></button>
+   
+             <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+               <p class='field'>
+                <label for='user'>Username</label>
+                <input type='text' id='email' name='email' title='email' ngModel #emailInput="ngModel" required email />
+                 <span id='valida' class='i i-warning'></span> 
+               </p>
+              <br>
+               <p class='field'>
+                <label for='pass'>PASSWORD</label>
+                <input type='password' id='password' name='password' title='Password' ngModel #passwordInput="ngModel" required/>
+                <span id='valida' class='i i-close'></span>
+             </p>
+ <br>
+             <label class='checkbox'>
+                <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
+             </label>
+     <br>
+             <input type='submit' id='do_login' value='GET STARTED' title='Get Started' />
+            
+     <div class='line-wh'></div>
+            </form>
+          </div>
+       </div>
+    </div>
+    <div class='box-info'>
+      
+          <button onclick="closeLoginInfo();" class='b b-info i i-left' title='Back to Sign In'></button>
+          <h3>Don't Have An Account?</h3>
+     
+      
+       <div class='fieldset-body' id='login_form'>
+   
+       <form (submit)="onRegister(registerForm)" #registerForm="ngForm">
+
+         <p class='field'>
+            <input type='text' id='fname' name='fname' placeholder="First Name" title='fname' ngModel  #fnameInput="ngModel" required />
+             <span id='valida' class='i i-warning'></span> 
+           </p>
+         
+        
+         <p class='field'>
+            <input type='text' id='lname' placeholder="Last Name" name='lname' title='lname' ngModel  #lnameInput="ngModel" required />
+             <span id='valida' class='i i-warning'></span> 
+           </p>
+      
+         <p class='field'>
+          <input type='text' placeholder="Email-Id" id='email' name='email' title='email' ngModel placeholder="E-Mail" #emailInput="ngModel" required email />
+           <span id='valida' class='i i-warning'></span> 
+         </p>
+         <p class='field'>
+          <input type='password' placeholder="Password" id='password' name='password' title='password' placeholder="Password" ngModel #passwordInput="ngModel" required/>
+          <span id='valida' class='i i-close'></span>
+       </p>
+       <div class='line-wh'></div>
+       <button type="submit" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button>
+   </form>
+</div>
+      </div>
+ </div>
+ 
+ 
+ <div class='icon-credits'>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a
+       href="http://www.flaticon.com/authors/budi-tanrim" title="Budi Tanrim">Budi Tanrim</a> & <a
+       href="http://www.flaticon.com/authors/nice-and-serious" title="Nice and Serious">Nice and Serious</a> from <a
+       href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a
+       href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+ </div>
+</section>

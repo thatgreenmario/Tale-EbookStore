@@ -3,17 +3,11 @@
     "rules": "database.rules.json"
   },
   "hosting": {
-    "public": "dist/Tale-ebook",
+    "public": "dist/Tale",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
     ]
   }
 }

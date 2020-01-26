@@ -1,0 +1,21 @@
+<main class="product-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let book of books">
+                <div class="product-item">
+                    <div class="product-thumb">
+                        <img class="img-responsive" src={{book.imagePath}} alt="book-img" />
+                    </div>
+                    <div class="product-content">
+                        <h4><strong><a>{{ book.title }}</a></strong></h4>
+                        <p>Author: {{ book.author }}</p>
+                         <a type="button" class="btn" href={{book.bookPath}} target="_blank">Save Offline</a>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</main>
