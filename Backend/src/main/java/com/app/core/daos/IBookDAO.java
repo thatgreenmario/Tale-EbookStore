@@ -19,4 +19,7 @@ public interface IBookDAO extends JpaRepository<Book, Integer>{
 	@Modifying
 	@Query("Update Book b set b.imagepath = :imagePath where b.isbn = :isbnNumber")
 	void setBookImagePaths(@Param("imagePath") String imagePath, @Param("isbnNumber") String isbnNumber);
+	
+	Book findByIsbn(String isbn);
+	
 }
