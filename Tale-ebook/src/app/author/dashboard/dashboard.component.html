@@ -1,0 +1,98 @@
+
+<section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Author Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+<div id="main-wrapper">
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- Column -->
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Income</h4>
+                            <div class="text-right">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> ₹12000</h2>
+                                <span class="text-muted">Total Income</span>
+                            </div>
+                            <span class="text-success">40%</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-color" role="progressbar" style="width: 40%; height: 6px;"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Books Sold</h4>
+                            <div class="text-right">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> 100</h2>
+                                <span class="text-muted">Total Books Sold</span>
+                            </div>
+                            <span class="text-info">40%</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-color" role="progressbar" style="width: 40%; height: 6px;"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+            </div>
+            <!-- Row -->
+            <!-- Row -->
+            <!-- Row -->
+            <!-- Row -->
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Bookwise Statistics</h4>
+                            <div class="table-responsive m-t-40">
+                                <table class="table stylish-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="2">Book Name</th>
+                                            <th>Price</th>
+                                            <th>Books Sold</th>
+                                            <th>Income Per Book</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngFor="let item of items">
+                                        <tr>
+                                            <td style="width:50px;">     <img width="80" src="../../../assets/images/book1.jpg" alt="" />
+                                            </td>
+                                            <td>
+                                                <h6>Fairy Tale</h6><small class="text-muted">fantasy</small>
+                                            </td>
+                                            <td>₹100</td>
+                                            <td>10</td>
+                                            <td>₹1000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>

@@ -11,16 +11,17 @@ import { AuthGuard } from './user/auth.guard';
 import { CartComponent } from './book/cart/cart.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
+import { AuthorComponent } from './author/author.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
   {path: '', component: HomeComponent},
   { path: "store", component: StoreComponent },
-  { path: "editUserProfile", component: EditProfileComponent },
-  //{ path: "author", component: AuthorLoginRegisterComponent },
+  { path: "editUserProfile", component: EditProfileComponent, canActivate: [AuthGuard]},
+  { path: "author", component: AuthorComponent },
   { path: "library", component: LibraryComponent ,canActivate: [AuthGuard]},
-  { path: "cart", component: CartComponent },
-  { path: "prevOrders", component: PrevOrdersComponent  },
+  { path: "cart", component: CartComponent, canActivate: [AuthGuard]},
+  { path: "prevOrders", component: PrevOrdersComponent  ,canActivate: [AuthGuard]},
 
   
   //{ path: '**', component: PageNotFoundComponent }

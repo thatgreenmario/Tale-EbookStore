@@ -15,6 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './book/cart/cart.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
+import { AuthorComponent } from './author/author.component';
+import { AuthorModule } from './author/author.module';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
     LibraryComponent,
     CartComponent,
     EditProfileComponent,
-    PrevOrdersComponent
+    PrevOrdersComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule ,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AuthorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

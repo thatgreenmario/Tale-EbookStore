@@ -6,24 +6,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show ">
-          <a class="nav-link" routerLink="/" >Home
-            <span class="sr-only">(current)</span>
-          </a>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
+          <a class="nav-link" routerLink="/" >Home</a>
         </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show ">
+
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
           <a class="nav-link" routerLink="store" >Store</a>
         </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show ">
-          <a class="nav-link" routerLink="authorLogin" >Author Login</a>
-        </li>
-        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show ">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
           <a class="nav-link" routerLink="library"  >My Library</a>
         </li>
         
         
-        <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show ">
-          <a class="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" routerLink="updateUser" >Account</a>
+        <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
+          <a class="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"  routerLink="editUserProfile" >Account</a>
           <ul class="dropdown-menu ">
             <li><a class="dropdown-item" routerLink="editUserProfile">Edit Profile</a></li>
             <li><a class="dropdown-item" routerLink="prevOrders">See Previous Orders</a></li>
@@ -32,28 +28,19 @@
         
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item">
-       <a routerLink="/cart"> <img src="/assets/icons/cart.svg" alt="" width="32" height="32" title="Cart" > 
-       </a>
+      <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item"[routerLinkActive]="['active']">
+       <a class="nav-link" routerLink="/cart"> Cart</a>
       </li>
 
+      <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
+        <a class="nav-link" routerLink="/author/home" >Author's Account</a>
+      </li>
+     
+      <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item">
+        <a routerLink="/" (click)="onClickLogout"> <img src="/assets/icons/signout.svg" alt="" width="25" height="25" title="Sign Out" > 
+        </a>
+       </li>
+ 
       </ul>
     </div>
   </div>
