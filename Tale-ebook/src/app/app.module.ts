@@ -13,6 +13,8 @@ import { StoreComponent } from './book/store/store.component';
 import { LibraryComponent } from './book/library/library.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './book/cart/cart.component';
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CartComponent } from './book/cart/cart.component';
     FooterComponent,
     StoreComponent,
     LibraryComponent,
-    CartComponent
+    CartComponent,
+    EditProfileComponent,
+    PrevOrdersComponent
   ],
   imports: [
     BrowserModule,

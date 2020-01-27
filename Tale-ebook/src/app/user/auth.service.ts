@@ -42,24 +42,22 @@ createUser(fname:string,lname:string,email:string,password:string){
   return true;
 }
 
-
-changePassword(oldPassword:string, newPassword:string){
- 
- if(oldPassword==newPassword)
- return "Old Password and New Password Should not be same!!!";
-  if(oldPassword=="johnDoe1234")
-  return "Password Changed Successfully!";
-else
-return "Old Password does not match!!";
-}
-      
-
-changeDetails(fname:string, lname:string){
-return "Details Changed Successfully!!"
-}
-
 logout(): void {
   this.isLoggedIn = false;
 }
+
+
+
+
+
+EditProfile(fname:string,lname:string,oldPassword:string,newPassword:string){
+  if(oldPassword==newPassword)
+  return "Old Password and New Password Should not be same!!!";
+   if(oldPassword=="johnDoe1234")
+   return "Password Changed Successfully!";
+ else
+ return "Old Password does not match!!";
+}
+
 
 }

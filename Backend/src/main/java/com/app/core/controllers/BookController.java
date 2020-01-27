@@ -12,12 +12,12 @@ import org.xml.sax.SAXException;
 
 import com.app.core.pojos.Book;
 import com.app.core.services.IBookServices;
+import com.app.core.utils.Mailer;
 
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
-
 
 @RestController
 public class BookController {
@@ -31,22 +31,24 @@ public class BookController {
 	}
 
 	@GetMapping("/getall")
-	@ResponseBody 
-	public List<Book> getAllBooks() throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
+	@ResponseBody
+	public List<Book> getAllBooks()
+			throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
+
 		return service.getAllBooks();
 	}
-	
-	//to reimplemented
-	@RequestMapping(value="/search/{id}")
+
+	// to reimplemented
+	@RequestMapping(value = "/search/{id}")
 	@ResponseBody
 	public List<Book> searchForBook(@PathVariable("id") String bookname) {
 		return service.getBookByName(bookname);
 	}
-	
 
-	@RequestMapping(value="/search/isbn/{isbn}")
+	@RequestMapping(value = "/search/isbn/{isbn}")
 	@ResponseBody
-	public Book searchbByISBN(@PathVariable("isbn") String isbnnumber) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
+	public Book searchbByISBN(@PathVariable("isbn") String isbnnumber)
+			throws ParserConfigurationException, SAXException, IOException, XPathExpressionException {
 		return service.getBookByISBN(isbnnumber);
 	}
 }
