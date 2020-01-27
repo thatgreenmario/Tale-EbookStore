@@ -119,4 +119,26 @@ public class BookServicesImpl implements IBookServices {
 		}
 
 	}
+
+	@Override
+	public Book getBookByISBN_noDetails(String isbn) {
+		
+		return new Book();
+		/*
+		Book temp = new Book();
+		temp.setIsbn(isbn);
+		Example<Book> examplebook = Example.of(temp);
+		Optional<Book> option = dao.findOne(examplebook);
+		if(option.isPresent())
+		{
+			System.out.println("got a value");
+			return option.get();
+			
+		}
+		else
+		{
+			System.out.println("got a null");
+			return new Book();
+		}*/
+	}
 }

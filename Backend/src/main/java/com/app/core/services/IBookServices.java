@@ -19,5 +19,7 @@ public interface IBookServices {
 	
 	List<Book> getBookByName(String bookName);
 	Book getBookByISBN(String isbnnumber) throws ParserConfigurationException, SAXException, IOException, XPathExpressionException;
+	
+	Book getBookByISBN_noDetails(String isbn);
 
 }

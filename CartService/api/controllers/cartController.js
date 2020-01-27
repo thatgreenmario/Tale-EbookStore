@@ -2,8 +2,8 @@
 exports.show_Cart = function (req, res) {
 
   var MongoClient = require('mongodb').MongoClient;
-  var url = "mongodb://localhost:27017/";
-
+  //var url = "mongodb://localhost:27017/";
+  var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("cart");
@@ -87,7 +87,8 @@ exports.addto_Cart = function (req, res) {
       //********************************
 
       var MongoClient = require('mongodb').MongoClient;
-      var url = "mongodb://localhost:27017/";
+      //var url = "mongodb://localhost:27017/";
+      var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
 
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
@@ -131,16 +132,18 @@ exports.append_Cart = function (req, res) {
       //********************************************/
 
       var MongoClient = require('mongodb').MongoClient;
-      var url = "mongodb://localhost:27017/";
+      //var url = "mongodb://localhost:27017/";
+      var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
 
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         var dbo = db.db("cart");
 
         dbo.collection('cart')
-          .updateOne(
+          .updateMany(
             { "_id": abc._id }, // Filter
-            { $push: { "isbn": abc.books } }, // Update
+            { $push: { "isbn": abc.books[0] } },
+            // { $push: { "isbn": "555555555555" } }, // Update
             { upsert: true } // add document with req.body._id if not exists 
 
           )
@@ -173,7 +176,8 @@ exports.deletefrom_Cart = function (req, res) {
       //********************************************/
 
       var MongoClient = require('mongodb').MongoClient;
-      var url = "mongodb://localhost:27017/";
+      //var url = "mongodb://localhost:27017/";
+      var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
 
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
