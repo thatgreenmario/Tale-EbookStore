@@ -29,43 +29,50 @@ public class UserController {
 
 	@Autowired
 	IUserServices service;
-	
+
 	@Autowired
 	Mailer mailer;
 
-
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public ResponseEntity<?> authenticateService(@RequestBody User user) {
+	public boolean authenticateService(@RequestBody User user) {
 		User temp = service.authenticate(user);
 
 		if (temp != null) {
-			return new ResponseEntity<User>(temp, HttpStatus.OK);
+			return true;/* new ResponseEntity<User>(temp, HttpStatus.OK) */
 		}
 
-		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
+		return false;/*
+						 * new ResponseEntity<String>("Authentication Failed : Invalid credentials",
+						 * HttpStatus.OK)
+						 */
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public ResponseEntity<?> registerService(@RequestBody User user) {
+	public Boolean registerService(@RequestBody User user) {
 		Boolean status = service.register(user);
 
 		if (status) {
-			
-			Mailer.sendMessage(user.getEmail(),
-					"Hello " + user.getFirstname() + ",\n\nThank You, for registering on Tale. Use your account to get the best of Tale Services.");
-			
-			return new ResponseEntity<String>("User Registered Successfully", HttpStatus.OK);
-			
+
+			new Thread(new Runnable() {
+				public void run() {
+					Mailer.sendMessage(user.getEmail(), "Hello " + user.getFirstname()
+							+ ",\n\nThank You, for registering on Tale. Use your account to get the best of Tale Services.");
+
+				}
+			}).start();
+
+			return true;
+
 		}
 
-		return new ResponseEntity<String>("User Registered Failed", HttpStatus.OK);
+		return false;
 	}
-	
-	@RequestMapping(value ="/generatebill", method = RequestMethod.POST)
-	public String getContent(@RequestBody UserBookMap userbookMap) throws XPathExpressionException, ParserConfigurationException, SAXException, IOException
-	{
+
+	@RequestMapping(value = "/generatebill", method = RequestMethod.POST)
+	public String getContent(@RequestBody UserBookMap userbookMap)
+			throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
 		return mailer.getContent(userbookMap);
-		//return bser.getAllBooks();
+		// return bser.getAllBooks();
 	}
 
 }

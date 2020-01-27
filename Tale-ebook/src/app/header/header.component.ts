@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     
     var s = document.createElement("script");
     s.type ="text/javascript";
-    s.src= "../../assets/pages/header.js";
+   // s.src= "../../assets/pages/header.js";
   this._elementRef.nativeElement.appendChild(s);
   
   }
