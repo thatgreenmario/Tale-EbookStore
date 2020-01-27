@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 
 import com.app.core.pojos.Book;
 import com.app.core.services.IBookServices;
-import com.app.core.utils.Mailer;
+import com.app.core.services.Mailer;
 
 import java.io.IOException;
 
@@ -34,7 +34,7 @@ public class BookController {
 	@ResponseBody
 	public List<Book> getAllBooks()
 			throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
-
+		//Mailer.sendReciept();
 		return service.getAllBooks();
 	}
 
