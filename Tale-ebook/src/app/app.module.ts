@@ -1,43 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './home/login/login.component';
-import { HeaderComponent } from './header/header/header.component';
-import { AngularMaterialModule } from './angular-material.module';
-import { RegisterComponent } from './home/register/register.component';
-import { IndexComponent } from './index/index/index.component';
-import { BookListComponent } from './store/book-list/book-list.component';
-import { CategoriesComponent } from './store/categories/categories/categories.component';
-import { StoreComponent } from './store/store.component';
-import { MyBookListComponent } from './library/my-book-list/my-book-list.component';
-import { LibraryComponent } from './library/library.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginRegisterComponent } from './user/login-register/login-register.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { StoreComponent } from './book/store/store.component';
+import { LibraryComponent } from './book/library/library.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './book/cart/cart.component';
+import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
+import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
+import { AuthorComponent } from './author/author.component';
+import { AuthorModule } from './author/author.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HeaderComponent,
-    RegisterComponent,
-    IndexComponent,
-    BookListComponent,
-    CategoriesComponent,
+    LoginRegisterComponent,
+    HomeComponent,
+    FooterComponent,
     StoreComponent,
-    MyBookListComponent,
     LibraryComponent,
+    CartComponent,
+    EditProfileComponent,
+    PrevOrdersComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule ,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AngularMaterialModule,
     FormsModule,
-    ReactiveFormsModule,
+    AuthorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

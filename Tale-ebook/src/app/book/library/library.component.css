@@ -1,0 +1,128 @@
+
+  .btn{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+    border: black;  color: white;
+    margin-bottom: 10px;
+    
+}
+
+
+.product-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+
+
+.card-block {
+  box-shadow: 10px 10px 10px rgba(90, 2, 21, 0.966), 0 -10px 10px rgba(141, 135, 135, 0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-block:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+
+.product-item .product-thumb {
+  position: relative;
+}
+
+.product-item .product-thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.product-item .product-thumb .bage {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 12px;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.product-item .product-thumb:before {
+  transition: .3s all;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.product-item .product-thumb .preview-meta {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.2s;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.product-item .product-thumb .preview-meta li {
+  display: inline-block;
+}
+
+.product-item .product-thumb .preview-meta li a, .product-item .product-thumb .preview-meta li span {
+  background: #fff;
+  padding: 10px 0px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  transition: .2s all;
+  width: 50px;
+}
+
+.product-item .product-thumb .preview-meta li a:hover, .product-item .product-thumb .preview-meta li span:hover {
+  background: #000;
+  color: #fff;
+}
+
+.product-item:hover .product-thumb:before {
+  opacity: 1;
+}
+
+.product-item:hover .preview-meta {
+  opacity: 1;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+.product-item .product-content {
+  text-align: center;
+}
+
+.product-item .product-content h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+.product-item .product-content h4 a {
+  color: #000;
+}
+
+
+.product-section {
+  padding: 8rem 0;
+}
+
+.img-responsive{
+
+  padding: 1.5rem;
+}

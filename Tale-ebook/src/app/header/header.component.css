@@ -1,0 +1,13 @@
+#navi{background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+  border: black;}
+  
+  img { /* svg on an img tag */
+    -webkit-filter: invert(.75); /* safari 6.0 - 9.0 */
+            filter: invert(.75);
+  }
+
+  .dropdown-item:hover
+{
+  background-color: rgb(216, 212, 210);
+}

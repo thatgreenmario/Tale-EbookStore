@@ -1,0 +1,121 @@
+
+<div >
+<section class="page-header" *ngIf="booksInCart.length>0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Cart</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div >
+    <section class="page-header" *ngIf="booksInCart.length<1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="empty-cart" >
+                        <h1 class="page-name">Cart Is Empty</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+<div class="page-wrapper" *ngIf="booksInCart.length>0">
+    <div class="cart shopping">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="cart">
+                    <div class="block">
+                        <div class="product-list">
+                            <form method="post">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="">Book</th>
+                                            <th class=""> Price</th>
+                                            <th class="">Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody *ngFor="let book of booksInCart">
+                                        <tr class="">
+                                            <td class="">
+                                                <div class="product-info">
+                                                    <img width="80" src="{{book.imagePath}}" alt="" />
+                                                    <a>{{ book.title }}</a>
+                                                </div>
+                                            </td>
+                                            <td class="">₹{{ book.price }}</td>
+                                            <td class="">
+                                                <button type="button" class="btn btn-dark"
+                                                    (click)="onRemoveFromCart($event,book)" class="product-remove"
+                                                    value="Remove">Remove</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-checkout-details">
+                       <div class="block">
+                          <h4 class="widget-title">Order Summary</h4>
+                          
+                         <div class="discount-code">
+                            <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal" href="">enter it here</a></p>
+                         </div>
+                        
+                          <ul class="summary-prices">
+                            
+                            <li>
+                                <span>Bag Total:</span>
+                                <span class="price">₹{{cartTotal}}</span>
+                             </li>
+                             <li>
+                                <span>Discount:</span>
+                                <span class="price">-₹{{discount}}</span>
+                             </li>
+                             <li>
+                                <span>Coupon Discount:</span>
+                                <span class="price">-₹{{discount}}</span>
+                             </li>
+                            
+                            
+                            <li>
+                                <span>Subtotal:</span>
+                                <span class="price">₹{{cartTotal}}</span>
+                             </li>
+                            
+                          </ul>
+                          <div class="summary-total">
+                             <span>Total</span>
+                             <span>₹{{ cartTotal }}</span>
+                          </div>
+                       </div>
+                    </div>
+                 <hr>
+                    <a routerLink="checkout" class="btn">Checkout</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+

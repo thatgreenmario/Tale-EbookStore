@@ -1,0 +1,53 @@
+
+<div class="area"></div>
+<nav class="main-menu">
+    <ul>
+        <li>
+            <a routerLink="./home">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Home
+                </span>
+            </a>
+
+        <li>
+            <a routerLink="dashboard">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Dashboard
+                </span>
+            </a>
+
+        </li>
+        <li class="has-subnav">
+            <a routerLink="publishBook">
+                <i class="fa fa-laptop fa-2x"></i>
+                <span class="nav-text">
+                    Publish Book
+                </span>
+            </a>
+
+        </li>
+        <li class="has-subnav">
+            <a routerLink="EditAuthorProfile">
+                <i class="fa fa-list fa-2x"></i>
+                <span class="nav-text">
+                    Edit Profile
+                </span>
+            </a>
+
+    </ul>
+
+    <ul class="logout">
+        <li>
+            <a href="#">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text">
+                    Logout
+                </span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>

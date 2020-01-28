@@ -1,0 +1,116 @@
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background:  url("../../../assets/img/author.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  
+  header.masthead h1 {
+    font-size: 2.25rem;
+  }
+  
+  @media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 72px;
+      padding-bottom: 0;
+    }
+    header.masthead p {
+      font-size: 1.15rem;
+    }
+    header.masthead h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    header.masthead h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+
+  .text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: black;
+  }  
+
+
+.btn{
+    background-color:rgb(43, 2, 43);
+    color: white;
+}
+
+
+
+.bg{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+    border: black;   }
+
+
+
+    .page-section {
+        padding: 8rem 0;
+      }
+      
+
+      .svg_container {
+        margin: 0 auto;
+      }
+      #arrowline {
+        stroke-dasharray: 90px;
+        stroke-dashoffset:1;
+        animation: grow 3s cubic-bezier(1,0,0,1) 4;
+        background-color: #fff;
+      }
+      @keyframes grow {
+        0% {
+          stroke-dashoffset:0;
+        }
+        50%{  
+          stroke-dashoffset:90;    
+        }
+         50.1%{
+          stroke-dashoffset:-90;
+        }
+        100% {
+          stroke-dashoffset:0; 
+        }
+      }
+      #arrowhead {
+        animation: move 3s cubic-bezier(1,0,0,1) 4;
+        animation-fill-mode: forwards;/**/
+      }
+      @keyframes move {
+        0% {
+          transform: translateX(0px);
+        }
+        50%{  
+          transform: translateX(90px);   
+        }
+        50.1%{  
+          transform: translateX(-90px);   
+        }
+        100% {
+          transform: translateX(0px);
+        }
+      }
+      /* silly onmouseout hack*/
+      .svg_container:not(  ) #arrowline,
+      .svg_container:not(  ) #arrowhead{
+        animation: restart;
+      }
+      @keyframes restart{}
+      
+      

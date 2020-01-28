@@ -1,0 +1,66 @@
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 72px);
+    background:  url("../../assets/img/books.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  
+  header.masthead h1 {
+    font-size: 2.25rem;
+  }
+  
+  @media (min-width: 992px) {
+    header.masthead {
+      height: 100vh;
+      min-height: 40rem;
+      padding-top: 72px;
+      padding-bottom: 0;
+    }
+    header.masthead p {
+      font-size: 1.15rem;
+    }
+    header.masthead h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    header.masthead h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+
+  .text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: black;
+  }  
+
+
+.btn{
+    background-color:rgb(43, 2, 43);
+    color: white;
+}
+
+
+
+.bg{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+    border: black;   }
+
+
+
+    .page-section {
+        padding: 8rem 0;
+      }
+      

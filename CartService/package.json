@@ -1,0 +1,21 @@
+{
+  "name": "cartservice",
+  "version": "1.0.0",
+  "description": "Cart Service for Tale:EbookStore ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "thatgreenmario",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9",
+    "request": "^2.88.0",
+    "require": "^2.4.20"
+  }
+}
