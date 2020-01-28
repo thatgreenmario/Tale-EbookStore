@@ -6,4 +6,9 @@ module.exports=function(app){
     .post(cartController.addto_Cart)
     .put(cartController.append_Cart)
     .delete(cartController.deletefrom_Cart)
+
+    app.route('/wishlist')
+    .get(cartController.show_Wishlist)
+    //.post(wishlistController.addto_Wishlist)
+
 };
