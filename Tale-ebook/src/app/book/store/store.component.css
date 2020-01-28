@@ -4,7 +4,9 @@
   }
 
   
- 
+ .space{
+   margin-top: 50px;
+ }
 
   .card-block {
     box-shadow: 10px 10px 10px rgba(43, 22, 22, 0.897), 0 -10px 10px rgba(141, 135, 135, 0.24);
@@ -123,6 +125,7 @@
   }
   .product-thumb{
     height: 400px;
+    
   }
   img.img-responsive{
     min-height: 400px;
