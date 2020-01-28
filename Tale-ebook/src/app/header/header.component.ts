@@ -14,16 +14,8 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  onClickLogout() {
+  onClickLogout(){
     this.authService.logout();
-
-  }
-  ngAfterViewInit() {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    // s.src= "../../assets/pages/header.js";
-    this._elementRef.nativeElement.appendChild(s);
-
   }
 
 }

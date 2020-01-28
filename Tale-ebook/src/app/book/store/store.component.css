@@ -1,9 +1,22 @@
 
 .product-item {
     margin-bottom: 30px;
-    border: outset;
+  }
+
+  
+ 
+
+  .card-block {
+    box-shadow: 10px 10px 10px rgba(43, 22, 22, 0.897), 0 -10px 10px rgba(141, 135, 135, 0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
   
+  .card-block:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  
+
+
   .product-item .product-thumb {
     position: relative;
   }
@@ -101,5 +114,5 @@
   
   .img-responsive{
 
-    padding: 3rem;
+    padding: 1.5rem;
   }
