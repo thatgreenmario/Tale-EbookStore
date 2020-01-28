@@ -10,6 +10,7 @@
     box-shadow: 10px 10px 10px rgba(43, 22, 22, 0.897), 0 -10px 10px rgba(141, 135, 135, 0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
    
+   
   }
   
   .card-block:hover {
