@@ -10,51 +10,54 @@ export class AuthService {
   redirectUrl: string;
 
 
-  private isAuthenticated = false;
+private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
   private userId: string;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
-  login(user) {
+  login(email: string, password: string) {
+    
+    //dummy data before integration with backend
+    const authData = { email: email, password: password };
 
-    console.log(user);
-
-    return this.http.post("http://localhost:5000/authenticate", user).toPromise()
-      .then(r => {
-        return r;
-      }).catch(error => {
-        return Promise.reject(error);
-      });
-
-
-  }
-
-
-  createUser(user) {
-    return this.http.post("http://localhost:5000/register", user).toPromise()
-      .then(r => {
-        console.log(r);
-        return r;
-      }).catch(error => {
-        return Promise.reject(error);
-      });
-
-  }
-
-
-
-
-
-  EditProfile(fname: string, lname: string, oldPassword: string, newPassword: string) {
-    if (oldPassword == newPassword)
-      return "Old Password and New Password Should not be same!!!";
-    if (oldPassword == "johnDoe1234")
-      return "Password Changed Successfully!";
+    if(email=="johndoe@gmail.com" && password=="johnDoe1234")
+   { this.isLoggedIn=true;
+     return true;}
     else
-      return "Old Password does not match!!";
+    return false;
   }
+
+
+createUser(fname:string,lname:string,email:string,password:string){
+
+  if(email=="johndoe@gmail.com")
+  {
+  alert(email +" is already a Tale Member! Please Login");
+  return false;  
+}
+  else
+  alert("User created:"+fname +"  "+lname+"  "+ email+"  "+password );
+  return true;
+}
+
+logout(): void {
+  this.isLoggedIn = false;
+}
+
+
+
+
+
+EditProfile(fname:string,lname:string,oldPassword:string,newPassword:string){
+  if(oldPassword==newPassword)
+  return "Old Password and New Password Should not be same!!!";
+   if(oldPassword=="johnDoe1234")
+   return "Password Changed Successfully!";
+ else
+ return "Old Password does not match!!";
+}
 
 
 }
