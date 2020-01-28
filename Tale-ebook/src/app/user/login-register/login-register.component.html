@@ -16,13 +16,13 @@
              <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
                <p class='field'>
                 <label for='user'>Username</label>
-                <input type='text' id='email' name='email' title='email' ngModel #emailInput="ngModel" required email />
+                <input type='text' id='login_email' name='login_email' title='email' [(ngModel)]="login_email" required email />
                  <span id='valida' class='i i-warning'></span> 
                </p>
               <br>
                <p class='field'>
                 <label for='pass'>PASSWORD</label>
-                <input type='password' id='password' name='password' title='Password' ngModel #passwordInput="ngModel" required/>
+                <input type='password' id='login_password' name='login_password' title='Password' [(ngModel)]="login_password" required/>
                 <span id='valida' class='i i-close'></span>
              </p>
  <br>
@@ -48,22 +48,22 @@
        <form (submit)="onRegister(registerForm)" #registerForm="ngForm">
 
          <p class='field'>
-            <input type='text' id='fname' name='fname' placeholder="First Name" title='fname' ngModel  #fnameInput="ngModel" required />
+            <input type='text' id='fname' name='fname' placeholder="First Name" title='fname' [(ngModel)]="fname" required />
              <span id='valida' class='i i-warning'></span> 
            </p>
          
         
          <p class='field'>
-            <input type='text' id='lname' placeholder="Last Name" name='lname' title='lname' ngModel  #lnameInput="ngModel" required />
+            <input type='text' id='lname' placeholder="Last Name" name='lname' title='lname' [(ngModel)]="lname" required />
              <span id='valida' class='i i-warning'></span> 
            </p>
       
          <p class='field'>
-          <input type='text' placeholder="Email-Id" id='email' name='email' title='email' ngModel placeholder="E-Mail" #emailInput="ngModel" required email />
+          <input type='text' placeholder="Email-Id" id='reg_email' name='reg_email' title='email' [(ngModel)]="reg_email" required email />
            <span id='valida' class='i i-warning'></span> 
          </p>
          <p class='field'>
-          <input type='password' placeholder="Password" id='password' name='password' title='password' placeholder="Password" ngModel #passwordInput="ngModel" required/>
+          <input type='password' placeholder="Password" id='reg_password' name='reg_password' title='password' placeholder="Password" [(ngModel)]="reg_password" required/>
           <span id='valida' class='i i-close'></span>
        </p>
        <div class='line-wh'></div>
