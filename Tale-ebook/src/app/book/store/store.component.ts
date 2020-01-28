@@ -26,6 +26,7 @@ export class StoreComponent implements OnInit {
       alert('error fetching data');
     }
     );
+    
   }
 
 
@@ -37,6 +38,25 @@ export class StoreComponent implements OnInit {
     alert(status);
 
   }
+
+  sortbyName() {
+    console.log(this.books);
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.title > book2.title) {
+        return 1;
+      }
+      if (book1.title < book2.title) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.books = sortedArr;
+
+    console.log(this.books,"sorted");
+
+  }
+
 
 }
 
