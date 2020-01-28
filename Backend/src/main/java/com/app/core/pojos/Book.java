@@ -35,6 +35,7 @@ public class Book {
 	private String booktrailer;
 	private String isbn;
 	private Integer sold;
+	private String authorName;
 
 	// Default Constructor
 	public Book() {
@@ -193,6 +194,16 @@ public class Book {
 
 	public void setSold(Integer sold) {
 		this.sold = sold;
+	}
+	
+	
+
+	public String getAuthorName() {
+		return authorName;
+	}
+
+	public void setAuthorName(String authorName) {
+		this.authorName = author.getAuthorName();
 	}
 
 	@Override
