@@ -1,13 +1,13 @@
 Pending Tasks
 
-sorting
-pagination
-search
-Top bar finalize
-logo pending
-admin
-book upload
-add zoom effect on book cover
+1)sorting
+2)pagination
+3)search
+4)Top bar finalize
+5)logo pending
+6)admin
+7)book upload
+8)add zoom effect on book cover
 
 
 
