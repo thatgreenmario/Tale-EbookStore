@@ -1,3 +1,17 @@
+Pending Tasks
+
+sorting
+pagination
+search
+Top bar finalize
+logo pending
+admin
+book upload
+add zoom effect on book cover
+
+
+
+
 # Tale-EbookStore
 E-book Marketplace created using Spring Boot and Angular
 
