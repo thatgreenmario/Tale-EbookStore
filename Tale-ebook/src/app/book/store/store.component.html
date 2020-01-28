@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-4  " *ngFor="let book of books">
-                <div class="card-block h-100" >
+                <div class="card-block">
                     <div class="product-item">
                         <div class="product-thumb">
-                            <img class="img-responsive" src={{book.imagepath}} alt="book-img" />
+                            <img class="img-responsive" src={{book.imagePath}} alt="book-img" />
                         </div>
                         <div class="product-content">
                             <button class="btn"> <img src="/assets/icons/heart.svg" alt="" width="32" height="32"
@@ -16,12 +16,12 @@
                             </button>
 
                             <h4><strong><a>{{ book.title }}</a></strong></h4>
-                            <p>Author: {{ book.authorName }}</p>
+                            <p>Author: {{ book.author }}</p>
                             <p>Genre: {{ book.genre }}</p>
                             <p class="price">Price: ₹{{ book.price }}</p>
                         </div>
                     </div>
-                    <div class="mt-5"></div>
+                    <div class="mt-3"></div>
                 </div>
             </div>
 
