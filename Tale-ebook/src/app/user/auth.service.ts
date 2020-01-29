@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn = false;
+  private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   redirectUrl: string;
   private isAuthenticated = false;
   private token: string;
@@ -15,13 +17,18 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
+
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
+  }
+
   login(user) {
 
     console.log(user);
 
     return this.http.post("http://localhost:5000/authenticate", user).toPromise()
       .then(r => {
-        this.isLoggedIn=<boolean> r;
+        this.loggedIn.next(<boolean> r);
         return r;
       }).catch(error => {
         return Promise.reject(error);
@@ -39,9 +46,12 @@ export class AuthService {
       });
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
+
+  logout() {
+    this.loggedIn.next(false);
+    this.router.navigate(['/userLogin']);
   }
+
 
 
   EditProfile(fname: string, lname: string, oldPassword: string, newPassword: string) {

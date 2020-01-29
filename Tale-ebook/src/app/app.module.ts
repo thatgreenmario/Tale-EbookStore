@@ -17,6 +17,7 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
 import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
 import { AuthorModule } from './author/author.module';
+import { WishlistComponent } from './book/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthorModule } from './author/author.module';
     CartComponent,
     EditProfileComponent,
     PrevOrdersComponent,
-    AuthorComponent
+    AuthorComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,

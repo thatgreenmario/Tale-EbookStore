@@ -1,0 +1,21 @@
+.btn{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+    border: black;  color: white;    
+}
+
+
+
+.cart{
+  border-right: solid grey 1px;
+  padding: 2px;
+}
+
+.empty-cart{
+ text-align: center;
+}
+
+.imgbtn{
+border: none;
+background-color: white;
+}

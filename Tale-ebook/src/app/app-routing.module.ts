@@ -12,6 +12,7 @@ import { CartComponent } from './book/cart/cart.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
+import { WishlistComponent } from './book/wishlist/wishlist.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
   { path: "library", component: LibraryComponent ,canActivate: [AuthGuard]},
   { path: "cart", component: CartComponent, canActivate: [AuthGuard]},
   { path: "prevOrders", component: PrevOrdersComponent  ,canActivate: [AuthGuard]},
-
+  { path: "wishlist", component: WishlistComponent, canActivate: [AuthGuard]},
   
   //{ path: '**', component: PageNotFoundComponent }
 ];
