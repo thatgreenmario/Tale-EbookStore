@@ -78,6 +78,23 @@ export class StoreComponent implements OnInit {
 
   }
 
+  sortbyPrice() {
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.price > book2.price) {
+        return 1;
+      }
+      if (book1.price < book2.price) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.books = sortedArr;
+    console.log(this.books, "sorted");
+
+
+  }
+
   searchBookByName(bookName: string) {
     this.bookservice.getBookByName(bookName).then(
       r => {
