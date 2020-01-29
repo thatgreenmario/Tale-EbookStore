@@ -22,13 +22,11 @@ public class User {
 
 	 //Default Constructor
 	public User() {   
-		super();
 		
 	}
 
 	//Parameterized constructor
 	public User(String firstname, String lastname, String email, String password) {  
-		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
