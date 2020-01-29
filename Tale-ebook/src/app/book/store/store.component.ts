@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
 import { Book } from '../book.model';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-store',
@@ -8,22 +9,108 @@ import { Book } from '../book.model';
   styleUrls: ['./store.component.css']
 })
 export class StoreComponent implements OnInit {
-
-  constructor(public bookservice :BookService) { }
+  books: Book[] = [];
+  selectedBook: Book;
+  constructor(public bookservice: BookService) { }
 
   ngOnInit() {
- 
-  }
-  
-books : Book[]= this.bookservice.getStoreBooks();
+    console.log("inside store");
+    this.bookservice.getStoreBooks().then(
+      r => {
+        var bookobj = JSON.stringify(r);
+        var bookObjArr = JSON.parse(bookobj);
+        console.log(bookObjArr);
+        this.books = bookObjArr;
 
-onAddToCart(event,book)
-{
- 
- var status: string = this.bookservice.addToCart(book);
+        /*        setTimeout(() => {
+                  this.sortbyAuthor();
+                }, 2000);*/
+
+      }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+
+  }
+
+
+  onAddToCart(event, book) {
+
+    var status: string = this.bookservice.addToCart(book);
 
     alert(status);
 
-}
+  }
+
+  sortbyName() {
+    //console.log(this.books);
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.title.trim() > book2.title.trim()) {
+        return 1;
+      }
+      if (book1.title.trim() < book2.title.trim()) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.books = sortedArr;
+
+    //console.log(this.books, "sorted");
+
+  }
+
+  sortbyAuthor() {
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.authorName.trim() > book2.authorName.trim()) {
+        return 1;
+      }
+      if (book1.authorName.trim() < book2.authorName.trim()) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.books = sortedArr;
+    console.log(this.books, "sorted");
+
+
+  }
+
+  searchBookByName(bookName: string) {
+    this.bookservice.getBookByName(bookName).then(
+      r => {
+        var bookobj = JSON.stringify(r);
+        var bookObjArr = JSON.parse(bookobj);
+        console.log(bookObjArr);
+        this.books = bookObjArr;
+
+      }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+  }
+
+  //for details page
+  searchBookByISBN(isbnNumber:string)
+  {
+    this.bookservice.getBookByISBN(isbnNumber).then(
+      r => {
+        var bookobj = JSON.stringify(r);
+        var bookObjJSON = JSON.parse(bookobj);
+        console.log(bookObjJSON);
+        this.selectedBook = bookObjJSON;
+
+      }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+  }
+
 
 }
+
+
