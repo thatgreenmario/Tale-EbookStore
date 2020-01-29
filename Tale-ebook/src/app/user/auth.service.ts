@@ -8,8 +8,6 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
-
-
   private isAuthenticated = false;
   private token: string;
   private tokenTimer: any;
@@ -23,6 +21,7 @@ export class AuthService {
 
     return this.http.post("http://localhost:5000/authenticate", user).toPromise()
       .then(r => {
+        this.isLoggedIn=<boolean> r;
         return r;
       }).catch(error => {
         return Promise.reject(error);

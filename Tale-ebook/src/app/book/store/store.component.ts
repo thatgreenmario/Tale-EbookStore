@@ -94,8 +94,7 @@ export class StoreComponent implements OnInit {
   }
 
   //for details page
-  searchBookByISBN(isbnNumber:string)
-  {
+  searchBookByISBN(isbnNumber: string) {
     this.bookservice.getBookByISBN(isbnNumber).then(
       r => {
         var bookobj = JSON.stringify(r);

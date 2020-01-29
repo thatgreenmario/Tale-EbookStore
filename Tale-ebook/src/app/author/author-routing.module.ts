@@ -4,7 +4,7 @@ import { AuthorComponent } from './author.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthorHomeComponent } from './author-home/author-home.component';
 import { AuthorEditProfileComponent } from './author-edit-profile/author-edit-profile.component';
-
+import{ PublishBookComponent } from './publish-book/publish-book.component'
 const authorRoutes: Routes = [
     {
         path: 'author',
@@ -21,7 +21,11 @@ const authorRoutes: Routes = [
             {
                 path: 'EditAuthorProfile',
                 component: AuthorEditProfileComponent
-            }
+            },
+            {
+                path: 'publishBook',
+                component: PublishBookComponent
+            }            
             
         ]
     },

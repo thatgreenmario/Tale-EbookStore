@@ -40,7 +40,6 @@ export class BookService {
       }).catch(error => {
         return Promise.reject(error);
       });
-
   }
 
   getBookByISBN(isbn:string)
@@ -67,6 +66,7 @@ export class BookService {
   getLibraryBooks() {
     return this.booksInLibrary;
   }
+
 
   removeFromCart(book: Book) {
     this.booksInCart = this.booksInCart.filter(obj => obj !== book);

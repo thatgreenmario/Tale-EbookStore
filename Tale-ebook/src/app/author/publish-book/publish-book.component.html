@@ -1,0 +1,132 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">Publish Book</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+
+
+<div class="page-wrapper">
+    <div class="container">
+    <section class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add Book Details</h3>
+        </div>
+        <div class="panel-body">
+
+        
+            <form (submit)="onAddBook(bookAddForm)" #bookAddForm="ngForm" class="form-horizontal" method="post">
+                
+                    <div class="form-group">
+                        <label for="title" class="col-md-3  control-label">Book Title</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="title" id="title" [(ngModel)]="title">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="authorName" class="col-md-3 control-label">Author</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="authorName" id="authorName"
+                                [(ngModel)]="authorName">
+                        </div>
+                    </div> <!-- form-group // -->
+
+
+                    <div class="form-group">
+                        <label for="desc" class="col-md-3 control-label">Description</label>
+                        <div class="col-md-9">
+                            <textarea id="desc" class="form-control" [(ngModel)]="desc"></textarea>
+                        </div>
+                    </div> <!-- form-group // -->
+
+
+                    <div class="form-group" class="">
+                        <label for="price" class="col-md-3 control-label">Price</label>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" name="price" id="price" [(ngModel)]="price">
+                        </div>
+                    </div> <!-- form-group // -->
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Publication</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="publication" id="publication"
+                                [(ngModel)]="publication">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Language</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="lang" id="lang" [(ngModel)]="lang">
+                        </div>
+                    </div> <!-- form-group // -->
+
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Book Trailer url</label>
+                        <div class="col-md-3">
+                            <input type="url" class="form-control" name="trailer" id="trailer" [(ngModel)]="trailer">
+                        </div>
+                    </div> <!-- form-group // -->
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">ISBN</label>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" name="ISBN" id="ISBN" [(ngModel)]="ISBN">
+                        </div>
+                    </div> <!-- form-group // -->
+
+
+                    <div class="form-group">
+                        <label for="Cover" class="col-md-3 control-label">Book Cover Photo</label>
+                        <div class="col-md-3">
+                            <input type="file" name="bookCover" [(ngModel)]="bookCover">
+                        </div>
+                    </div> <!-- form-group // -->
+
+                    <div class="form-group">
+                        <label for="bookpdf" class="col-md-3 control-label">Upload book <small>(pdf
+                                format)</small></label>
+                        <div class="col-md-3">
+                            <input type="file" name="bookpdf" [(ngModel)]="bookpdf">
+                        </div>
+                    </div> <!-- form-group // -->
+
+                    <div class="form-group">
+                        <label for="genre" class="col-md-3 control-label">Genre</label>
+                        <div class="col-md-3">
+                            <select class="form-control" id="genre" name="genre" [(ngModel)]="bookCover">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Fantasy">Fantasy</option>
+                                <option value="Mystery">Mystery</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Self-help book">Self-help book</option>
+                                <option value="Literature">Literature</option>
+                                <option value="Historical Fiction"> Historical Fiction</option>
+
+                            </select>
+                        </div>
+                    </div> <!-- form-group // -->
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" class="btn btn-primary">Submit Details</button>
+                        </div>
+                    </div> <!-- form-group // -->
+    
+                </form>
+
+        </div><!-- panel-body // -->
+    </section><!-- panel// -->
+   
+</div> <!-- container// -->
+</div>
+</div>

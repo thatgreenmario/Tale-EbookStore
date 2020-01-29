@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthorHomeComponent } from './author-home/author-home.component';
 import { AuthorEditProfileComponent } from './author-edit-profile/author-edit-profile.component';
 import { FormsModule } from '@angular/forms';
+import { PublishBookComponent } from './publish-book/publish-book.component';
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     DashboardComponent,
     AuthorHomeComponent,
-    AuthorEditProfileComponent
+    AuthorEditProfileComponent,
+    PublishBookComponent
   ],
 
 
