@@ -1,0 +1,16 @@
+for both wishlist and cart
+
+
+delete query - delete
+{
+	"_id":"1",
+	"userid":"1",
+	"books":"22222"
+}
+update query - put/post
+{
+	"_id":"1",
+	"userid":"1",
+	"books":["787878"]
+}
+

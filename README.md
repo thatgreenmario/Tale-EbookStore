@@ -36,3 +36,17 @@ Request->userID AND BookISBN number
 ====>delete book with same ISBN number
 Response->"Request Successfull"
 
+
+
+
+
+Cart and wishlist Implementation
+
+address -> 13.127.189.157:3000/getcart
+address -> 13.127.189.157:3000/wishlist
+get->
+13.127.189.157:3000/wishlist
+to see wishlist/cart
+put->
+13.127.189.157:3000
+to add to wishlist/cart
