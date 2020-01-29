@@ -52,6 +52,16 @@ export class BookService {
     });
   }
 
+  getBookByName(bookName:string)
+  {
+    return this.http.get("http://localhost:5000/search/"+bookName).toPromise()
+    .then(r => {
+      return r;
+    }).catch(error => {
+      return Promise.reject(error);
+    });
+  }
+
 
   getLibraryBooks() {
     return this.booksInLibrary;

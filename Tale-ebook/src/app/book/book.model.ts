@@ -14,4 +14,5 @@ export interface Book {
   isbn: string;
   sold: number;
   authorName: string;
+  quantity: number;
 }
