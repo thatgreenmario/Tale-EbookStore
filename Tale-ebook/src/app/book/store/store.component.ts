@@ -98,6 +98,29 @@ export class StoreComponent implements OnInit {
   // }
 
   //for details page
+
+
+  // sortbyPrice() {
+  //   var sortedArr = this.books.sort((book1, book2) => {
+  //     if (book1.price > book2.price) {
+  //       return 1;
+  //     }
+  //     if (book1.price < book2.price) {
+  //       return -1;
+  //     }
+  //     return 0;
+  //   });
+
+  //   this.books = sortedArr;
+  //   console.log(this.books, "sorted");
+
+
+  // }
+
+
+
+
+
   searchBookByISBN(isbnNumber: string) {
     this.bookservice.getBookByISBN(isbnNumber).then(
       r => {
@@ -148,6 +171,24 @@ if(val=="authorName")
 
   this.books = sortedArr;
 }
+
+
+if(val=="price")
+{
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.price > book2.price) {
+        return 1;
+      }
+      if (book1.price < book2.price) {
+        return -1;
+      }
+      return 0;
+    });
+
+    this.books = sortedArr;
+    console.log(this.books, "sorted");
+
+}
   }
 
 
@@ -158,20 +199,20 @@ onSearch(form: NgForm){
   if(this.searchBy=="name")
   {
       this.bookservice.getBookByName(this.searchString).then(
-      r => {
-        var bookobj = JSON.stringify(r);
-        var bookObjArr = JSON.parse(bookobj);
-        console.log(bookObjArr);
-        this.books = bookObjArr;
-
+        r => {
+          var bookobj = JSON.stringify(r);
+          var bookObjArr = JSON.parse(bookobj);
+          console.log(bookObjArr);
+          this.books = bookObjArr;
+  
+        }
+      ).catch(e => {
+        alert('error fetching data');
       }
-    ).catch(e => {
-      alert('error fetching data');
+      );
     }
-    );
- 
-  }
-
+  
+  
   if(this.searchBy=="author")
   {
 
@@ -179,5 +220,8 @@ onSearch(form: NgForm){
 }
 
 }
+
+
+
 
 

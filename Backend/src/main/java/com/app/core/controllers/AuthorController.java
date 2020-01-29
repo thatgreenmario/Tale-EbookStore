@@ -38,39 +38,43 @@ public class AuthorController {
 		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
 	}
 
-	@RequestMapping(value="/registerAuth",method=RequestMethod.POST)
-	public ResponseEntity<?> registerService(@RequestBody Authors author)
-	{
-		Boolean status=service.register(author);
-		
-		if(status)
-		{
-			return new ResponseEntity<String>("Author Registered Successfully",HttpStatus.OK);
+	@RequestMapping(value = "/registerAuth", method = RequestMethod.POST)
+	public ResponseEntity<?> registerService(@RequestBody Authors author) {
+		Boolean status = service.register(author);
+
+		if (status) {
+			return new ResponseEntity<String>("Author Registered Successfully", HttpStatus.OK);
 		}
-		
-		return new ResponseEntity<String>("Author Registered Failed",HttpStatus.OK);
+
+		return new ResponseEntity<String>("Author Registered Failed", HttpStatus.OK);
 	}
-	
-	
-	
+
 	@RequestMapping("/getlist/{id}")
 	public List<Book> getBookListByUser(@PathVariable("id") String id) {
 		return service.getAllBooksbyAuthor(id);
 
 	}
-	
-	@RequestMapping(value="/addbook",method=RequestMethod.POST)
-	public ResponseEntity<?> addNewBook(@RequestBody AuthorBookMap authBook)
-	{
-		Boolean status=service.addNewBook(authBook.getBook(), authBook.getAuthorId());
-		
-		if(status)
-		{
-			return new ResponseEntity<String>("Book Added Successfully",HttpStatus.OK);
+
+	@RequestMapping(value = "/addbook", method = RequestMethod.POST)
+	public ResponseEntity<?> addNewBook(@RequestBody AuthorBookMap authBook) {
+		Boolean status = service.addNewBook(authBook.getBook(), authBook.getAuthorId());
+
+		if (status) {
+			return new ResponseEntity<String>("Book Added Successfully", HttpStatus.OK);
 		}
-		
-		return new ResponseEntity<String>("Book_Add Operation Failed",HttpStatus.OK);
+
+		return new ResponseEntity<String>("Book_Add Operation Failed", HttpStatus.OK);
 	}
-	
+
+	@RequestMapping(value = "/editauthor", method = RequestMethod.POST)
+	public ResponseEntity<?> EditAuthorProfile(@RequestBody Authors author) {
+		Authors temp = service.editAuthor(author);
+
+		if (temp != null) {
+			return new ResponseEntity<Authors>(temp, HttpStatus.OK);
+		}
+
+		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
+	}
 
 }
