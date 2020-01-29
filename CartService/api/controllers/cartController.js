@@ -219,3 +219,92 @@ exports.show_Wishlist = function (req, res) {
     });
   });
 };
+
+exports.addto_Wishlist = function (req, res) {
+
+  if (req.method == 'PUT') {
+    var jsonString = '';
+
+    req.on('data', function (data) {
+      jsonString += data;
+    });
+
+    req.on('end', function () {
+
+      var abc = JSON.parse(jsonString);
+      //console.log(JSON.parse(jsonString));
+      console.log(abc.books);
+
+      //********************************************/
+
+      var MongoClient = require('mongodb').MongoClient;
+      //var url = "mongodb://localhost:27017/";
+      var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
+
+      MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("wishlist");
+
+        dbo.collection('wishlist')
+          .updateMany(
+            { "_id": abc._id }, // Filter
+            { $push: { "isbn": abc.books[0] } },
+            // { $push: { "isbn": "555555555555" } }, // Update
+            { upsert: true } // add document with req.body._id if not exists 
+
+          )
+
+        res.write('Request Successfull');
+        res.end();
+
+
+
+
+      });
+    });
+  }
+}
+
+exports.deletefrom_Wishlist = function (req, res) {
+
+  if (req.method == 'DELETE') {
+    var jsonString = '';
+
+    req.on('data', function (data) {
+      jsonString += data;
+    });
+
+    req.on('end', function () {
+
+      var abc = JSON.parse(jsonString);
+      //console.log(JSON.parse(jsonString));
+      console.log(abc.books);
+
+      //********************************************/
+
+      var MongoClient = require('mongodb').MongoClient;
+      //var url = "mongodb://localhost:27017/";
+      var url = "mongodb+srv://root:root1234@ebookcart-wbdt2.mongodb.net/test?retryWrites=true&w=majority";
+
+      MongoClient.connect(url, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("wishlist");
+
+        dbo.collection('wishlist')
+          .updateOne(
+            { "_id": abc._id }, // Filter
+            { $pull: { "isbn": abc.books } }, // Update
+            { upsert: true } // add document with req.body._id if not exists 
+
+          )
+
+        res.write('Request Successfull');
+        res.end();
+
+
+
+
+      });
+    });
+  }
+}
