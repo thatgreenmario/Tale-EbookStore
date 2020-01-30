@@ -18,7 +18,7 @@ import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
 import { AuthorModule } from './author/author.module';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
-import { DescribelistComponent } from './book/store/description/description.component';
+import { DescribelistComponent } from './book/store/describelist/describelist.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { DescribelistComponent } from './book/store/description/description.comp
     PrevOrdersComponent,
     AuthorComponent,
     WishlistComponent,
+    DescribelistComponent
    ],
   imports: [
     BrowserModule,
@@ -41,7 +42,6 @@ import { DescribelistComponent } from './book/store/description/description.comp
     AppRoutingModule,
     FormsModule,
     AuthorModule,
-    DescribelistComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
