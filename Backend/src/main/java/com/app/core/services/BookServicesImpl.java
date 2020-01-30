@@ -54,10 +54,11 @@ public class BookServicesImpl implements IBookServices {
 		temp.setIsbn(isbnnumber);
 		Example<Book> examplebook = Example.of(temp);
 		Optional<Book> option = dao.findOne(examplebook);
-		Book temp2 = option.get();
+		
 
 		// temp2.setDescription(getDescriptionByGoodreads(isbnnumber));
 		if (option.isPresent()) {
+			Book temp2 = option.get();
 			if (temp2.getRating() == null && temp2.getDescription() == null) {
 
 				HashMap<Integer, String> tempmap = getDescriptionByGoodreads(isbnnumber);
