@@ -199,3 +199,9 @@ li{
     border: black;  color: white;    
 margin-top: 20px;
   }
+
+
+  .page-header{
+
+    text-align: center;
+  }

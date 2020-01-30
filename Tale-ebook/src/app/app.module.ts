@@ -20,6 +20,7 @@ import { AuthorModule } from './author/author.module';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
 import { DescribelistComponent } from './book/store/describelist/describelist.component';
 import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.
     AuthorComponent,
     WishlistComponent,
     DescribelistComponent,
-    PaymentGatewayComponent
+    PaymentGatewayComponent,
+    DashboardComponent
    ],
   imports: [
     BrowserModule,
