@@ -72,4 +72,18 @@ export class BookService {
     this.booksInCart = this.booksInCart.filter(obj => obj !== book);
   }
 
+
+
+book:Book;
+  setBookDetails(book:Book)
+  {
+this.book=book;
+this.router.navigate(['/describe']);
+  }
+
+getBookDetails()
+{
+  return this.book;
+}
+
 }
