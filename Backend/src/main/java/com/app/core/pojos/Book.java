@@ -1,10 +1,13 @@
 package com.app.core.pojos;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlIDREF;
@@ -36,6 +39,7 @@ public class Book {
 	private String isbn;
 	private Integer sold;
 	private String authorName;
+	private byte[] file;
 
 	// Default Constructor
 	public Book() {
@@ -44,11 +48,12 @@ public class Book {
 	}
 
 	// Parameterized constructor
-	public Book(String title, Authors author, Integer quantity, Integer price,String rating, String genre,
+	
+	public Book(Integer id, String title, Authors author, Integer quantity, Integer price, String rating, String genre,
 			String publication, String language, String description, String imagepath, String bookpath,
-			String booktrailer, String isbn, Integer sold) {
+			String booktrailer, String isbn, Integer sold, String authorName, byte[] file) {
 		super();
-		
+		this.id = id;
 		this.title = title;
 		this.author = author;
 		this.quantity = quantity;
@@ -63,16 +68,16 @@ public class Book {
 		this.booktrailer = booktrailer;
 		this.isbn = isbn;
 		this.sold = sold;
+		this.authorName = authorName;
+		this.file = file;
 	}
-
+	
 	// Getters and setters
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return id;
 	}
-
-	
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -212,6 +217,15 @@ public class Book {
 				+ price + ", rating=" + rating + ", genre=" + genre + ", publication=" + publication + ", language="
 				+ language + ", description=" + description + ", imagepath=" + imagepath + ", bookpath=" + bookpath
 				+ ", booktrailer=" + booktrailer + ", isbn=" + isbn + "]";
+	}
+	
+	@Lob
+	public byte[] getFile() {
+		return file;
+	}
+
+	public void setFile(byte[] file) {
+		this.file = file;
 	}
 
 	
