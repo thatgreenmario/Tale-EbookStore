@@ -28,7 +28,12 @@ export class AuthService {
 
     return this.http.post("http://localhost:5000/authenticate", user).toPromise()
       .then(r => {
-        this.loggedIn.next(<boolean> r);
+        if (r !== null) {
+          console.log(r);
+          this.loggedIn.next(true);
+        }
+        else
+          this.loggedIn.next(false);
         return r;
       }).catch(error => {
         return Promise.reject(error);

@@ -1,4 +1,4 @@
-	package com.app.core.controllers;
+package com.app.core.controllers;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,17 +36,15 @@ public class UserController {
 	Mailer mailer;
 
 	@RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-	public boolean authenticateService(@RequestBody User user) {
+	public ResponseEntity<?> authenticateService(@RequestBody User user) {
 		User temp = service.authenticate(user);
 
 		if (temp != null) {
-			return true;/* new ResponseEntity<User>(temp, HttpStatus.OK) */
+			return new ResponseEntity<User>(temp, HttpStatus.OK);
 		}
 
-		return false;/*
-						 * new ResponseEntity<String>("Authentication Failed : Invalid credentials",
-						 * HttpStatus.OK)
-						 */
+		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
+
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -83,7 +81,6 @@ public class UserController {
 		return service.getUserBooks(Integer.parseInt(userId));
 	}
 
-		
 	@RequestMapping(value = "/edituser", method = RequestMethod.POST)
 	public ResponseEntity<?> editUSerProfile(@RequestBody User user) {
 		User temp = service.editUser(user);
@@ -93,7 +90,7 @@ public class UserController {
 		}
 
 		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
-		
+
 	}
 
 }

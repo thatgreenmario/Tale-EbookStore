@@ -19,6 +19,7 @@ public class User {
 	private String firstname,lastname,email,password;
 	@OneToMany(mappedBy = "user")
 	private List<UserHistory> userHistory;
+	private Integer isAuthor; 
 
 	 //Default Constructor
 	public User() {   
@@ -26,11 +27,12 @@ public class User {
 	}
 
 	//Parameterized constructor
-	public User(String firstname, String lastname, String email, String password) {  
+	public User(String firstname, String lastname, String email, String password, Integer isAuthor) {  
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
+		this.isAuthor = isAuthor;
 	}
 	
 	//Getters and Setters
@@ -88,6 +90,15 @@ public class User {
 		
 	}
 
+	public Integer getIsAuthor() {
+		return isAuthor;
+	}
+
+	public void setIsAuthor(Integer isAuthor) {
+		this.isAuthor = isAuthor;
+	}
+
+	
 	//toString
 	@Override
 	public String toString() {
