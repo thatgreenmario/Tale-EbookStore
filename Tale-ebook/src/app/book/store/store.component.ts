@@ -138,7 +138,7 @@ export class StoreComponent implements OnInit {
 
 
 
-  //On sort 
+  //On sort
   onSort(val){
 
 if(val=="name")
@@ -158,7 +158,7 @@ if(val=="name")
 }
 if(val=="authorName")
 {
-  
+
   var sortedArr = this.books.sort((book1, book2) => {
     if (book1.authorName.trim() > book2.authorName.trim()) {
       return 1;
@@ -204,19 +204,32 @@ onSearch(form: NgForm){
           var bookObjArr = JSON.parse(bookobj);
           console.log(bookObjArr);
           this.books = bookObjArr;
-  
+
         }
       ).catch(e => {
         alert('error fetching data');
       }
       );
     }
-  
-  
+
+
   if(this.searchBy=="author")
   {
 
   }
+}
+
+
+
+
+
+
+////////for details
+onGetDetails(event,book)
+{
+
+  this.bookservice.setBookDetails(book);
+
 }
 
 }

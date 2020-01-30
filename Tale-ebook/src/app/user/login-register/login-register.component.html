@@ -20,15 +20,14 @@
                  <span id='valida' class='i i-warning'></span> 
                </p>
               <br>
+              <br>
                <p class='field'>
                 <label for='pass'>PASSWORD</label>
                 <input type='password' id='login_password' name='login_password' title='Password' [(ngModel)]="login_password" required/>
                 <span id='valida' class='i i-close'></span>
              </p>
  <br>
-             <label class='checkbox'>
-                <input type='checkbox' value='TRUE' title='Keep me Signed in' /> Keep me Signed in
-             </label>
+            
      <br>
              <input type='submit' id='do_login' value='GET STARTED' title='Get Started' />
             
@@ -66,7 +65,10 @@
           <input type='password' placeholder="Password" id='reg_password' name='reg_password' title='password' placeholder="Password" [(ngModel)]="reg_password" required/>
           <span id='valida' class='i i-close'></span>
        </p>
-       <div class='line-wh'></div>
+       <label class='checkbox'>
+          <input type='checkbox' value='TRUE' title='checkAuthor' id="checkAuthor"/> Are you an author?
+       </label>
+<br>
        <button type="submit" class='b-cta' title='Sign up now!'> CREATE ACCOUNT</button>
    </form>
 </div>

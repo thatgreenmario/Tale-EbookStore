@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     if (sessionStorage.getItem("authorID")) {
+      console.log(sessionStorage.getItem("authorID"));
       this.authorID = sessionStorage.getItem("authorID");
       //this.authorID = '1';
       this.getBooksByAuthor();

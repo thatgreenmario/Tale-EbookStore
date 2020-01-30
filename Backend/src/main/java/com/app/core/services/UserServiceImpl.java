@@ -40,7 +40,7 @@ public class UserServiceImpl implements IUserServices {
 		Example<User> exampleUser = Example.of(temp);
 		Optional<User> optional = dao.findOne(exampleUser);
 
-		System.out.println(optional.get().toString());
+		//System.out.println(optional.get().toString());
 		if (optional.isPresent()) {
 			return optional.get();
 		}
