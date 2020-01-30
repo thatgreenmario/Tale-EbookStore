@@ -6,7 +6,7 @@
                 <div class="row">
                 <input type="text" name="searchString" class="form-control col-md-4" placeholder="Search Books" [(ngModel)]="searchString" />
                 <select name="searchBy" class="dropdown dropdown-lg dropdwn form-control col-md-2" [(ngModel)]="searchBy">
-                    <option disabled [selected]="!searchBy">Search By</option>
+                    <option disabled [selected]="isSelected">Search By</option>
                     <option value="name">Name</option>
                     <option value="author">Author</option>
                     <option value="ISBN">ISBN</option>
@@ -41,9 +41,9 @@
                 <div class="space">
                     <div class="card-block h-100">
                         <div class="product-item ">
-                            <div class="product-thumb">
-                                <img class="img-responsive" src={{book.imagepath}} alt="book-img" />
-                            </div>
+                            <div class="product-thumb" (click)="onGetDetails($event,book)" >
+                                 <img class="img-responsive" src={{book.imagepath}} alt="book-img" />
+                           </div>
                             <div class="product-content">
                                 <button class="btn"> <img src="/assets/icons/heart.svg" alt="" width="32" height="32"
                                         title="Cart" routerLink="/cart">
@@ -51,8 +51,7 @@
                                 <button class="btn"> <img src="/assets/icons/cart.svg" alt="" width="32" height="32"
                                         title="Cart" (click)="onAddToCart($event, book)">
                                 </button>
-
-                                <h4><strong><a>{{ book.title }}</a></strong></h4>
+                               <h4><strong><a>{{ book.title }}</a></strong></h4>
                                 <p>Author: {{ book.authorName }}</p>
                                 <p>Genre: {{ book.genre }}</p>
                                 <p class="price">Price: ₹{{ book.price }}</p>

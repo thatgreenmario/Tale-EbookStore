@@ -10,10 +10,13 @@ export class DescribelistComponent implements OnInit {
 
   constructor(private bookService: BookService) { }
 
+  book;
   ngOnInit() {
+    this.book  = this.bookService.getBookDetails();
+    console.log(this.bookService.getBookByISBN(this.book.isbn));
   }
 
-book= this.bookService.getBookDetails();
+
 
 
 }

@@ -6,6 +6,12 @@ body {
   font-family: 'open sans';
   overflow-x: hidden; }
 
+
+  .btn{
+   
+    border: black;  color: white;    
+}
+
 img {
 
   max-width: 50%;

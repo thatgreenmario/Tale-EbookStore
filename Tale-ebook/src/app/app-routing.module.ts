@@ -13,9 +13,12 @@ import { EditProfileComponent } from './user/edit-profile/edit-profile.component
 import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
+import { DescribelistComponent } from './book/store/describelist/describelist.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
+  { path: "describe", component: DescribelistComponent},
+  
   {path: '', component: HomeComponent},
   { path: "store", component: StoreComponent },
   { path: "editUserProfile", component: EditProfileComponent, canActivate: [AuthGuard]},
