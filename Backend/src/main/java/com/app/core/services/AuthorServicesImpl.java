@@ -22,7 +22,7 @@ public class AuthorServicesImpl implements IAuthorServices {
 
 	@Autowired
 	IAuthorDao dao;
-	
+
 	@Autowired
 	IBookDAO bookDao;
 
@@ -76,28 +76,53 @@ public class AuthorServicesImpl implements IAuthorServices {
 
 		Book temp = new Book();
 		temp.setIsbn(book.getIsbn());
-		
+
 		Example<Book> examplebook = Example.of(temp);
 		Optional<Book> optional = bookDao.findOne(examplebook);
-		
-		if(optional.isPresent())
-		{
+
+		if (optional.isPresent()) {
 			return false;
 		}
-		
+
 		Authors author = dao.findById(authorId).get();
-		
+
 		author.addBook(book);
-		
+
 		/*
 		 * book.setAuthor(author);
 		 * 
 		 * author.getBookList().add(book);
 		 */
-		
+
 		return true;
 
-		
+	}
+
+	@Override
+	public Authors editAuthor(Authors author) {
+		// edit author profile
+		Authors temp = new Authors();
+		temp.setAuthorId(author.getAuthorId());
+
+		Example<Authors> exampleauthor = Example.of(temp);
+		Optional<Authors> optional = dao.findOne(exampleauthor);
+
+		Authors athr = optional.get();
+
+		if (author.getAuthorName() != null) {
+			athr.setAuthorName(author.getAuthorName());
+		}
+
+		if (author.getEmail() != null) {
+			athr.setEmail(author.getEmail());
+		}
+		if (author.getPassword() != null) {
+			athr.setPassword(author.getPassword());
+		}
+
+		Authors newAuthor = em.merge(athr);
+
+		return newAuthor;
 	}
 
 }

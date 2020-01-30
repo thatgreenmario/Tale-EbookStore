@@ -1,0 +1,66 @@
+
+    <section class="page-header" *ngIf="booksPurchased.length>0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content">
+                        <h1 class="page-name">Wishlist</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <div >
+        <section class="page-header" *ngIf="booksPurchased.length<1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="empty-cart" >
+                            <h1 class="page-name">Nothing in your Wishlist</h1>
+                             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+    
+    
+    <div class="page-wrapper" *ngIf="booksPurchased.length>0">
+        <div class="cart shopping">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12 ">
+                        <div class="cart">
+                        <div class="block">
+                            <div class="product-list">
+                                <form method="post">
+                                    <table class="table">
+                                        
+    
+                                        <tbody *ngFor="let book of booksPurchased">
+                                            <tr class="">
+                                                <td class="">
+                                                    <div class="product-info">
+                                                        <img width="80" src="{{book.imagepath}}" alt="" />
+                                                        <a>{{ book.title }} : <small>{{book.authorName}}</small></a> 
+                                                    </div>
+                                                </td>
+                                                <td class="">₹{{ book.price }}</td>
+                                     <td><button class="imgbtn"> <img src="/assets/icons/cart.svg" alt="" width="32" height="32"
+                                        title="Cart" (click)="onAddToCart($event, book)"></button></td>
+                                        <td><button class="imgbtn"> <img src="/assets/icons/multiply.svg" alt="" width="32" height="32"
+                                            title="Remove" (click)="onRemove($event, book)"></button></td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                </form>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>

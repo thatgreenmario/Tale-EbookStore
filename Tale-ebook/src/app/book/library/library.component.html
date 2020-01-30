@@ -1,3 +1,17 @@
+<div >
+    <section class="page-header" *ngIf="books.length<1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="empty-cart" >
+                        <h1 class="page-name">Nothing in your Library Yet</h1>
+                        <button class="btn" routerLink="/store">Buy Now</button>                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
 
 <main class="product-section">

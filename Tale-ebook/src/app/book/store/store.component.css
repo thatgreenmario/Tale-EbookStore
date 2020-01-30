@@ -3,7 +3,8 @@
     margin-bottom: 30px;
   }
 
-  
+
+
  .space{
    margin-top: 50px;
  }
@@ -104,7 +105,6 @@
   .product-item .product-content h4 {
     font-size: 16px;
     font-weight: 400;
-    margin-top: 15px;
     margin-bottom: 6px;
   }
   
@@ -113,9 +113,6 @@
   }
 
   
-  .product-section {
-    padding: 8rem 0;
-  }
   
   .img-responsive{
 
@@ -130,3 +127,82 @@
   img.img-responsive{
     min-height: 400px;
   }
+
+
+
+  .sortBy{
+
+    margin-top: 100px;
+  }
+
+  .btn{
+margin: 15px;
+  }
+
+
+  body {
+    padding-top: 50px;
+}
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}
+
+
+.dropdwn{
+  border-radius: 0;
+  box-shadow: none;
+  height: 45px;
+  outline: none;
+  font-weight: 200;
+  font-size: 12px;
+  box-shadow: none;
+}
+
+input.submitBtn{
+  background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  height: 45px;
+  outline: none;
+  font-weight: 200;
+  font-size: 12px;
+  box-shadow: none;
+}

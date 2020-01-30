@@ -1,4 +1,4 @@
-package com.app.core.controllers;
+	package com.app.core.controllers;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
 
@@ -73,6 +75,25 @@ public class UserController {
 			throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
 		return mailer.getContent(userbookMap);
 		// return bser.getAllBooks();
+	}
+
+	@RequestMapping("/getuserhistory/{id}")
+	@ResponseBody
+	public List<Book> searchForBook(@PathVariable("id") String userId) {
+		return service.getUserBooks(Integer.parseInt(userId));
+	}
+
+		
+	@RequestMapping(value = "/edituser", method = RequestMethod.POST)
+	public ResponseEntity<?> editUSerProfile(@RequestBody User user) {
+		User temp = service.editUser(user);
+
+		if (temp != null) {
+			return new ResponseEntity<User>(temp, HttpStatus.OK);
+		}
+
+		return new ResponseEntity<String>("Authentication Failed : Invalid credentials", HttpStatus.OK);
+		
 	}
 
 }

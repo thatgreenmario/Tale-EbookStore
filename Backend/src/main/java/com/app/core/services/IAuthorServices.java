@@ -18,5 +18,8 @@ public interface IAuthorServices {
 	public boolean register(Authors author);
 	
 	@Transactional
+	public Authors editAuthor(Authors author);
+	
+	@Transactional
 	public boolean addNewBook(Book book, Integer authorId);
 }

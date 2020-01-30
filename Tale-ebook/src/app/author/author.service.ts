@@ -36,6 +36,17 @@ export class AuthorService {
   }
 
 
+  editAuthor(author) {
+    return this.http.post("http://localhost:5000/editauthor", author).toPromise()
+      .then(r => {
+        console.log(r);
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
+  }
+
+
   getAuthorBookList(authorid: string) {
     //return this.booksInStore;
     return this.http.get("http://localhost:5000/getlist/" + authorid).toPromise()
