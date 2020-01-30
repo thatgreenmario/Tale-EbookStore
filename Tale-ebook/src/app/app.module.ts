@@ -18,6 +18,7 @@ import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
 import { AuthorModule } from './author/author.module';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
+import { DescribelistComponent } from './book/store/description/description.component';
 
 @NgModule({
   declarations: [
@@ -33,13 +34,14 @@ import { WishlistComponent } from './book/wishlist/wishlist.component';
     PrevOrdersComponent,
     AuthorComponent,
     WishlistComponent,
-  ],
+   ],
   imports: [
     BrowserModule,
     HttpClientModule ,
     AppRoutingModule,
     FormsModule,
-    AuthorModule
+    AuthorModule,
+    DescribelistComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
