@@ -14,10 +14,12 @@ import { PrevOrdersComponent } from './user/prev-orders/prev-orders.component';
 import { AuthorComponent } from './author/author.component';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
 import { DescribelistComponent } from './book/store/describelist/describelist.component';
+import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
   { path: "describe", component: DescribelistComponent},
+  { path: "payment", component: PaymentGatewayComponent},
   
   {path: '', component: HomeComponent},
   { path: "store", component: StoreComponent },

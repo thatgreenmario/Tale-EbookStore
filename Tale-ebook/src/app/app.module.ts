@@ -19,6 +19,7 @@ import { AuthorComponent } from './author/author.component';
 import { AuthorModule } from './author/author.module';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
 import { DescribelistComponent } from './book/store/describelist/describelist.component';
+import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { DescribelistComponent } from './book/store/describelist/describelist.co
     PrevOrdersComponent,
     AuthorComponent,
     WishlistComponent,
-    DescribelistComponent
+    DescribelistComponent,
+    PaymentGatewayComponent
    ],
   imports: [
     BrowserModule,
