@@ -46,14 +46,14 @@ export class LoginRegisterComponent implements OnInit {
   
   onLogin(form: NgForm) {
 
-    LoginRegisterComponent.firstName.next("firstname");
+
     var user = {
       "email": this.login_email,
       "password": this.login_password
     };
 
     
-    if(this.login_email=="Tana" && this.login_password=="123")
+    if(this.login_email=="subhendupccoe@gmail.com" && this.login_password=="123")
     {
       LoginRegisterComponent.isadmin.next(true);
     }
@@ -62,6 +62,7 @@ export class LoginRegisterComponent implements OnInit {
       r => {
         console.log(r);
         if (r !== null) {
+         
           if (r["isAuthor"] == 0) {
             sessionStorage.setItem("username", r["firstname"]);  
             sessionStorage.setItem("userId", r["id"]);  

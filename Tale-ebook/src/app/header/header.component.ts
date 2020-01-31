@@ -18,14 +18,14 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private authService: AuthService  ) { }
-
+  isLoggedIn="";
 
   ngOnInit() {
     
     this.firstName$ = LoginRegisterComponent.firstName.asObservable();    
     this.isLoggedIn$= this.authService.isLoggedIn;
     this.isAuthor$=LoginRegisterComponent.isauthor.asObservable();
-    this.isAuthor$=LoginRegisterComponent.isadmin.asObservable();
+    this.isAdmin$=LoginRegisterComponent.isadmin.asObservable();
     }
 
   onClickLogout(){

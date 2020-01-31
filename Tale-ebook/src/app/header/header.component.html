@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto blink-text-menu">
    
-        <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+        <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item" *ngIf="isLoggedIn$ | async  ">
       <h6 class="nav-link" *ngIf="firstName$"> Hi! {{ firstName$ | async }} </h6>
           
         </li>
@@ -18,13 +18,13 @@
           <a class="nav-link" routerLink="store" >Store</a>
         </li>
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
-          <a class="nav-link" routerLink="library" *ngIf="isLoggedIn$ | async as isLoggedIn" >My Library</a>
+          <a class="nav-link" routerLink="library" *ngIf="isLoggedIn$ | async  " >My Library</a>
         </li>
         
         
         <li class="nav-item dropdown" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
           <a class="nav-link dropdown-toggle"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown"  routerLink="editUserProfile"
-          *ngIf="isLoggedIn$ | async as isLoggedIn" >Account</a>
+          *ngIf="isLoggedIn$ | async  " >Account</a>
           <ul class="dropdown-menu ">
             <li><a class="dropdown-item" routerLink="editUserProfile">Edit Profile</a></li>
             <li><a class="dropdown-item" routerLink="prevOrders">See Previous Orders</a></li>
@@ -34,11 +34,11 @@
 
 
       <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item"[routerLinkActive]="['active']">
-       <a class="nav-link" routerLink="/cart" *ngIf="isLoggedIn$ | async as isLoggedIn"> Cart</a>
+       <a class="nav-link" routerLink="/cart" *ngIf="isLoggedIn$ | async  "> Cart</a>
       </li>
 
       <li data-toggle="collapse" data-target=".navbar-collapse.show" class="nav-item"[routerLinkActive]="['active']">
-        <a class="nav-link" routerLink="/wishlist" *ngIf="isLoggedIn$ | async as isLoggedIn">Wishlist</a>
+        <a class="nav-link" routerLink="/wishlist" *ngIf="isLoggedIn$ | async  ">Wishlist</a>
        </li>
  
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
@@ -55,7 +55,7 @@
      
 
       <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item">
-        <a *ngIf="isLoggedIn$ | async as isLoggedIn" (click)="onClickLogout()"> <img src="/assets/icons/signout.svg" alt="" width="25" height="25" title="Sign Out" > 
+        <a *ngIf="isLoggedIn$ | async  " (click)="onClickLogout()"> <img src="/assets/icons/signout.svg" alt="" width="25" height="25" title="Sign Out" > 
         </a>
        </li>
  
