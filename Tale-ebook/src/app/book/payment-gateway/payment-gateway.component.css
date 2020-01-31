@@ -1,0 +1,207 @@
+li{
+    list-style: none;
+  }
+  iFrame{
+    opacity: 1;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form *{
+      box-sizing: border-box;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form{
+      max-width: 500px;
+      background: rgba(45, 187, 255, 0.38);
+      background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+      border: black;  color: white;    
+       background: -webkit-linear-gradient(to top left, rgba(57, 162, 212, 0.9), rgba(109, 161, 185, 0.58));
+      padding: 20px;
+      border-radius: 8px;
+      transition: all 0.3s ease-in;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form h3{
+      color: #fff;
+      position: relative;
+      text-shadow: 0px 1px 1px #4d4d4d;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container label{
+      text-shadow: 0px -1px 1px rgba(7, 108, 156, 0.5);
+      display: block;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type{
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      width: 44px;
+      height: 28px;
+      top: 50%;
+      transform: translatey(-50%);
+      -webkit-transform: translatey(-50%);
+      -ms-transform: translatey(-50%);
+    background-image: url('https://wordpress.paymentplugins.com/woo-payment-gateway/assets/payment-method-sprites.png');
+  }
+  .bfwc-body .small-container .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-small-width .bfwc-card-type{
+      top: -10px;
+      right: 6px;
+  }
+  @media (max-width: 375px){
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type{
+      top: -10px;
+  }	
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper{
+      margin-bottom: 20px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper:last-child{
+      margin-bottom: 0px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .bfwc-form-wrapper{
+      margin-bottom: 0px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container{
+          align-self: flex-end;
+          flex: 1;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container.field-save{
+      align-self: flex-start;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-year{
+      max-width: 80px;
+      margin-left: 10px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-cvv{
+      width: 80px;
+    min-width: 40px;
+      margin-left: 15px;
+      position: absolute;
+      right: 0;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-exp-month{
+      max-width: 120px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-postal{
+      max-width: 210px;
+  }
+  .bfwc-body .small-container .bfwc-new-payment-method-container .bfwc-field-container.field-postal{
+      width: 120px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-save{
+      width: 80px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container:nth-child(n+2){
+          margin-left: 10px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .hosted-field{
+      height: 40px;
+      background: rgba(255, 255, 255, 0.88);
+      position: relative;
+      /* background-color: #fff; */
+      padding-left: 10px;
+      border-radius: 3px;
+      box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.6), inset 0px 1px 1px 0px rgba(0,0,0,.6);
+      transition: all 0.3s ease-in;
+      -webkit-transition: all 0.3s ease-in;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .hosted-field.braintree-hosted-fields-invalid{
+      box-shadow: 0px 1px 12px 3px rgba(247, 70, 70, 0.6), inset 0px 1px 1px 0px rgba(0,0,0,.6);
+      background: rgb(247, 230, 230);
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .hosted-field.braintree-hosted-fields-valid{
+      box-shadow: 0px 1px 12px 3px rgba(202, 255, 205, 0.46), inset 0px 1px 1px 0px rgba(0,0,0,.6);
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form label{
+      color: #fff;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper{
+      display: flex;
+      display: -webkit-flex;
+      position: relative;
+  }
+  
+  .bfwc-body .small-container .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper{
+      flex-wrap: wrap;
+  }
+  @media (max-width: 450px){
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper{
+      flex-wrap: wrap;	
+  }
+  
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper{
+      margin-bottom: 10px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-field-container.field-save{
+      width: 40px;
+  }
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.visa {
+      background-size: 86px auto;
+      background-position: 0 -429px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.master-card {
+      background-size: 86px auto;
+      background-position: 0 -317px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.discover {
+      background-size: 84px auto;
+      background-position: 0 -199px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.diners-club {
+      background-size: 110px auto;
+      background-position: 0 -230px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.maestro {
+      background-size: 86px auto;
+      background-position: 0 -289px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.american-express {
+      background-size: 86px auto;
+      background-position: 0 -399px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.jcb {
+      background-size: 86px auto;
+      background-position: 0 -261px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container .bfwc-card-type.unionpay {
+      background-size: 86px auto;
+      background-position: 0 -261px;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container input[type="checkbox"]{
+      display: none;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container label.bfwc-save-label:after{
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.88);;
+      border-radius: 3px;
+      box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,.6);
+      transition: all 0.3s ease-in;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-field-container input[type="checkbox"]:checked + label.bfwc-save-label:after{
+          background-color: rgba(202, 255, 205, 0.52);
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-small-form .bfwc-field-container.field-cvv,
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-small-form .bfwc-field-container.field-save{
+      position: relative !important;
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .bfwc-field-container:last-of-type:not(:first-child){
+      position:absolute;
+      right:0px
+  }
+  .bfwc-body .bfwc-new-payment-method-container .bfwc-card-form .bfwc-form-wrapper .bfwc-field-container.field-year{
+      position: relative !important;
+  }
+
+
+
+  .btn{
+    background-color: black;
+    border: black;  color: white;    
+margin-top: 20px;
+  }
+
+
+  .page-header{
+
+    text-align: center;
+  }

@@ -29,6 +29,12 @@ export class BookService {
 
   getCartBooks() {
     return this.booksInCart;
+   /* return this.http.get("http://localhost:5000/getall").toPromise()
+    .then(r => {
+      return r;
+    }).catch(error => {
+      return Promise.reject(error);
+    });*/
   }
 
 
