@@ -31,6 +31,7 @@ export class BookService {
     //return this.booksInCart;
     return this.http.get("http://localhost:3000/getcart").toPromise()
     .then(r => {
+      console.log("here");
       return r;
     }).catch(error => {
       return Promise.reject(error);
@@ -40,7 +41,7 @@ export class BookService {
 
   getStoreBooks() {
     //return this.booksInStore;
-    return this.http.get("http://localhost:5000/getall").toPromise()
+    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/getall").toPromise()
       .then(r => {
         return r;
       }).catch(error => {
@@ -50,7 +51,7 @@ export class BookService {
 
   getBookByISBN(isbn:string)
   {
-    return this.http.get("http://localhost:5000/search/isbn/"+isbn).toPromise()
+    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/search/isbn/"+isbn).toPromise()
     .then(r => {
       return r;
     }).catch(error => {
@@ -60,7 +61,7 @@ export class BookService {
 
   getBookByName(bookName:string)
   {
-    return this.http.get("http://localhost:5000/search/"+bookName).toPromise()
+    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/search/"+bookName).toPromise()
     .then(r => {
       return r;
     }).catch(error => {

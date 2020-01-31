@@ -22,14 +22,11 @@ export class CartComponent implements OnInit {
     this.booksInCart=[];
     this.bookservice.getCartBooks().then(
       r => {
-        var bookobj = JSON.stringify(r);
+        console.log(r);
+       /* var bookobj = JSON.stringify(r);
         var bookObjArr = JSON.parse(bookobj);
         console.log(bookObjArr);
         this.booksInCart = bookObjArr;
-
-        /*        setTimeout(() => {
-                  this.sortbyAuthor();
-                }, 2000);*/
 
         var price = 0;
         for (let i = 0; i < this.booksInCart.length; i++) {
@@ -37,7 +34,7 @@ export class CartComponent implements OnInit {
           this.cartTotal = price;
         }
         console.log(this.booksInCart.length);
-
+*/
       }
     ).catch(e => {
       alert('error fetching data');

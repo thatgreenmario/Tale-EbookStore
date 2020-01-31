@@ -16,7 +16,7 @@ export class AuthorService {
 
     console.log(author);
 
-    return this.http.post("http://localhost:5000/validate", author).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/validate", author).toPromise()
       .then(r => {
         return r;
       }).catch(error => {
@@ -26,7 +26,7 @@ export class AuthorService {
 
 
   registerAuthor(author) {
-    return this.http.post("http://localhost:5000/registerAuth", author).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/registerAuth", author).toPromise()
       .then(r => {
         console.log(r);
         return r;
@@ -37,7 +37,7 @@ export class AuthorService {
 
 
   editAuthor(author) {
-    return this.http.post("http://localhost:5000/editauthor", author).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/editauthor", author).toPromise()
       .then(r => {
         console.log(r);
         return r;
@@ -49,7 +49,7 @@ export class AuthorService {
 
   getAuthorBookList(authorid: string) {
     //return this.booksInStore;
-    return this.http.get("http://localhost:5000/getlist/" + authorid).toPromise()
+    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/getlist/" + authorid).toPromise()
       .then(r => {
         return r;
       }).catch(error => {
@@ -59,9 +59,22 @@ export class AuthorService {
   }
 
 
-  addBookToList(book:Book)
+  addBookToList(book)
   {
-    return this.http.post("http://localhost:5000/addbook", book).toPromise()
+    console.log(book);
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/addbook", book).toPromise()
+      .then(r => {
+        console.log(r);
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
+  }
+
+  bookupload(bookpdf)
+  {
+    //console.log(book);
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/upload", bookpdf).toPromise()
       .then(r => {
         console.log(r);
         return r;
