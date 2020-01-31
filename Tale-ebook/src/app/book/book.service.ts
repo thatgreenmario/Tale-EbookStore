@@ -22,26 +22,42 @@ export class BookService {
 
 
 
-  addToCart(book: Book) {
-    this.booksInCart.push(book);
-    return "Added to Cart!!";
+  addToCart(bookobj) {
+    return this.http.put("http://localhost:3000/getcart", bookobj).toPromise()
+      .then(r => {
+        console.log("book added");
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
+  }
+
+  removeFromCart(bookobj) {
+    console.log(bookobj);
+    return this.http.delete("http://localhost:3000/getcart", bookobj).toPromise()
+      .then(r => {
+        console.log("book deleted");
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
   }
 
   getCartBooks() {
     //return this.booksInCart;
     return this.http.get("http://localhost:3000/getcart").toPromise()
-    .then(r => {
-      console.log("here");
-      return r;
-    }).catch(error => {
-      return Promise.reject(error);
-    });
+      .then(r => {
+        console.log("here");
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
   }
 
 
   getStoreBooks() {
     //return this.booksInStore;
-    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/getall").toPromise()
+    return this.http.get("http://localhost:5000/getall").toPromise()
       .then(r => {
         return r;
       }).catch(error => {
@@ -49,24 +65,22 @@ export class BookService {
       });
   }
 
-  getBookByISBN(isbn:string)
-  {
-    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/search/isbn/"+isbn).toPromise()
-    .then(r => {
-      return r;
-    }).catch(error => {
-      return Promise.reject(error);
-    });
+  getBookByISBN(isbn: string) {
+    return this.http.get("http://localhost:5000/search/isbn/" + isbn).toPromise()
+      .then(r => {
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
   }
 
-  getBookByName(bookName:string)
-  {
-    return this.http.get("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/search/"+bookName).toPromise()
-    .then(r => {
-      return r;
-    }).catch(error => {
-      return Promise.reject(error);
-    });
+  getBookByName(bookName: string) {
+    return this.http.get("http://localhost:5000/search/" + bookName).toPromise()
+      .then(r => {
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
   }
 
 
@@ -75,22 +89,15 @@ export class BookService {
   }
 
 
-  removeFromCart(book: Book) {
-    this.booksInCart = this.booksInCart.filter(obj => obj !== book);
+
+  book: Book;
+  setBookDetails(book: Book) {
+    this.book = book;
+    this.router.navigate(['/describe']);
   }
 
-
-
-book:Book;
-  setBookDetails(book:Book)
-  {
-this.book=book;
-this.router.navigate(['/describe']);
+  getBookDetails() {
+    return this.book;
   }
-
-getBookDetails()
-{
-  return this.book;
-}
 
 }

@@ -186,8 +186,8 @@ exports.deletefrom_Cart = function (req, res) {
         dbo.collection('cart')
           .updateOne(
             { "_id": abc._id }, // Filter
-            { $pull: { "isbn": abc.books } }, // Update
-            { upsert: true } // add document with req.body._id if not exists 
+            { $pull: { "isbn": {$in: abc.books} } }, // Update
+            { multi: true } // add document with req.body._id if not exists 
 
           )
 

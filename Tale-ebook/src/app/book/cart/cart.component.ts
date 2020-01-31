@@ -14,21 +14,34 @@ export class CartComponent implements OnInit {
   booksInCart: Book[];/*= this.bookservice.getCartBooks(); */
 
 
-  constructor(public bookservice: BookService) {
+  constructor(public bookService: BookService) {
 
   }
 
   ngOnInit() {
-    this.booksInCart=[];
-    this.bookservice.getCartBooks().then(
+    this.booksInCart = [];
+    var userid = sessionStorage.getItem("userId");
+    this.bookService.getCartBooks().then(
       r => {
         console.log(r);
-       /* var bookobj = JSON.stringify(r);
+        var bookobj = JSON.stringify(r);
         var bookObjArr = JSON.parse(bookobj);
         console.log(bookObjArr);
-        this.booksInCart = bookObjArr;
+        //this.booksInCart = bookObjArr;
 
-        var price = 0;
+        bookObjArr.forEach(bookobj => {
+          //console.log(userid);
+          if (bookobj._id === userid)
+          {
+            bookobj.isbn.forEach(isbn => {
+              console.log(isbn);
+              this.getbooks(isbn);
+            });
+          }
+        });
+
+
+        /*var price = 0;
         for (let i = 0; i < this.booksInCart.length; i++) {
           price += this.booksInCart[i].price;
           this.cartTotal = price;
@@ -44,9 +57,51 @@ export class CartComponent implements OnInit {
 
   }
 
+  getbooks(isbnString: string) {
+    this.bookService.getBookByISBN(isbnString).then(
+      r => {
+        var bookobj = JSON.stringify(r);
+        var bookObjArr = JSON.parse(bookobj);
+        console.log(bookObjArr);
+        this.booksInCart.push(bookObjArr);
+
+        /*        var someStr = this.book.description;
+                this.bookdesc = someStr.replace(/['"]+/g, '');
+                console.log(someStr.replace(/['"]+/g, ''));
+        
+                console.log(this.bookdesc);*/
+
+        this.cartTotal += bookObjArr.price;
+      }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+  }
+
   onRemoveFromCart(event, book: Book) {
     // Item to remove
-    this.booksInCart = this.booksInCart.filter(obj => obj !== book);
+    
+    console.log("trying to remove ");
+    var books=[];
+    books.push(book.isbn);
+    console.log(books);
+    var bookobj={
+      "_id":sessionStorage.getItem("userId"),
+      "userid":sessionStorage.getItem("userId"),
+      "books":books
+    };
+
+    console.log(bookobj);
+    this.bookService.removeFromCart(bookobj).then(
+      r => {
+        console.log(r);
+      }
+    ).catch(e => {
+     // alert('error fetching data');
+    }
+    );
+
   }
 
 }

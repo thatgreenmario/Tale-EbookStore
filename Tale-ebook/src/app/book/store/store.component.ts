@@ -41,9 +41,25 @@ export class StoreComponent implements OnInit {
 
   onAddToCart(event, book) {
 
-    var status: string = this.bookservice.addToCart(book);
+    console.log("trying to add ");
+    var books=[];
+    books.push(book.isbn);
+    console.log(books);
+    var bookobj={
+      "_id":sessionStorage.getItem("userId"),
+      "userid":sessionStorage.getItem("userId"),
+      "books":books
+    };
 
-    alert(status);
+    this.bookservice.addToCart(bookobj).then(
+      r => {
+        console.log(r);
+      }
+    ).catch(e => {
+     // alert('error fetching data');
+    }
+    );
+
 
   }
 

@@ -47,7 +47,7 @@ export class PublishBookComponent implements OnInit {
     this.fileToUpload = files.item(0); 
     let formData = new FormData(); 
     formData.append('file', this.fileToUpload, this.fileToUpload.name); 
-    this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/upload", formData).subscribe((val) => {
+    this.http.post("http://localhost:5000/upload", formData).subscribe((val) => {
     
     console.log(val);
     });
