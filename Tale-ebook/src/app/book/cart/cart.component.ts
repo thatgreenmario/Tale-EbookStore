@@ -18,8 +18,6 @@ export class CartComponent implements OnInit {
 
   }
 
-
- 
   ngOnInit() {
     this.booksInCart=[];
     this.bookservice.getCartBooks().then(
