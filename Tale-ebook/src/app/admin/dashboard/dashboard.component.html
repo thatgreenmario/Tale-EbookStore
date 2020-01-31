@@ -1,1 +1,112 @@
-<p>dashboard works!</p>
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <h1 class="page-name">{{adminName}}'s Dashboard</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div id="main-wrapper">
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="row">
+                <!-- Column -->
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Revenue</h4>
+                            <div class="text-right">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> 2243222</h2>
+                                <span class="text-muted">Total Revenue Generated</span>
+                            </div>
+                            <!-- <span class="text-success">{{totalIncome/totalBooksPrice*100}}%</span> -->
+                            <span class="text-success">59</span>
+
+                            <div class="progress">
+                                <div class="progress-bar bg-color" role="progressbar" id="progressbar1"
+                                    style="width: 100%; height: 6px;" aria-valuenow="25" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">Books Sold</h4>
+                            <div class="text-right">
+                                <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i>5454
+                                </h2>
+                                <span class="text-muted">Total Books Sold</span>
+                            </div>
+                            <span class="text-info">989878</span>
+                            <div class="progress">
+                                <div class="progress-bar bg-color" role="progressbar" id="progressbar2"
+                                    style="width: 100%; height: 6px;" aria-valuenow="0" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-wrapper">
+    <div class="cart shopping">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="cart">
+                        <div class="block">
+                            <h4 class="card-title">Registered Members</h4>
+                        
+                            <div class="product-list">
+                                <form method="post">
+                                    <table class="table">
+
+                                        <tr>
+                                            <th>
+                                                Member
+                                            </th>
+                                            <th>Member Name</th>
+                                            <th>Member Email</th>
+                                            <th>Remove</th>
+
+                                        </tr>
+                                        
+                                        <tbody *ngFor="let user of users">
+                                            <tr class="">
+                                                <td style="width:50px;">     <img width="80" src="../../../assets/images/user.png" alt="" />
+                                                </td>
+                                                <td class="">
+                                                    <div class="product-info">
+                                                        <a>{{ user.firstName }} &nbsp {{user.lastName}}</a>
+                                                    </div>
+                                                </td>
+                                                <td class="">{{ user.email }}</td>
+                                                <td><button class="imgbtn"> <img src="/assets/icons/multiply.svg" alt=""
+                                                            width="32" height="32" title="Remove"
+                                                            (click)="onRemove($event, book)"></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <hr>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>

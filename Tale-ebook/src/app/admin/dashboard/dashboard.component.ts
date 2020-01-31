@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/user/user.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,5 +12,37 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+users: User[]=[
+  {
+     id: "w243435345",
+      firstName: "kdnfvsa",
+      lastName: "ddshdvknv",
+      email: "kdjbvdmv@jhdhs.com",
+      password: "sasvdvd",
+      role: "sasfs",
+      isAuthor: 1,
+  },
+  {
+    id: "w243435345",
+     firstName: "kdnfvsa",
+     lastName: "ddshdvknv",
+     email: "kdjbvdmv@jhdhs.com",
+     password: "sasvdvd",
+     role: "sasfs",
+     isAuthor: 1,
+ },
+ {
+  id: "w243435345",
+   firstName: "kdnfvsa",
+   lastName: "ddshdvknv",
+   email: "kdjbvdmv@jhdhs.com",
+   password: "sasvdvd",
+   role: "sasfs",
+   isAuthor: 1,
+}
+]
+
+
 
 }
