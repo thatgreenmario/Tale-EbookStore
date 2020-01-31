@@ -28,13 +28,13 @@ export class BookService {
   }
 
   getCartBooks() {
-    return this.booksInCart;
-   /* return this.http.get("http://localhost:5000/getall").toPromise()
+    //return this.booksInCart;
+    return this.http.get("http://localhost:3000/getcart").toPromise()
     .then(r => {
       return r;
     }).catch(error => {
       return Promise.reject(error);
-    });*/
+    });
   }
 
 
