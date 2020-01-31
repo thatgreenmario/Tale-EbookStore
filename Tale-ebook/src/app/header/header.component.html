@@ -46,7 +46,7 @@
       </li>
      
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
-        <a class="nav-link" routerLink="/adminDashboard" *ngIf="isLoggedIn$ | async as isLoggedIn" >Admin's Account</a>
+        <a class="nav-link" routerLink="/adminDashboard" *ngIf="isAdmin$ | async as isAdminIn" >Admin's Account</a>
       </li>
      
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
