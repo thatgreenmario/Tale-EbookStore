@@ -1,0 +1,12 @@
+.container{
+
+    text-align: center;
+}
+
+
+.btn{
+    background-image: linear-gradient(to right top, #890303, #6f0026, #480d30, #231225, #070707);
+  
+    border: black;  color: white;    
+}
+

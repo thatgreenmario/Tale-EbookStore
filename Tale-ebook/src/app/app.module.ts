@@ -21,6 +21,7 @@ import { WishlistComponent } from './book/wishlist/wishlist.component';
 import { DescribelistComponent } from './book/store/describelist/describelist.component';
 import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ThankYouComponent } from './book/payment-gateway/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     WishlistComponent,
     DescribelistComponent,
     PaymentGatewayComponent,
-    DashboardComponent
+    DashboardComponent,
+    ThankYouComponent
    ],
   imports: [
     BrowserModule,
