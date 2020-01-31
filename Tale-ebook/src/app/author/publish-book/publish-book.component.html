@@ -42,7 +42,7 @@
                     <div class="form-group">
                         <label for="desc" class="col-md-3 control-label">Description</label>
                         <div class="col-md-9">
-                            <textarea id="desc" class="form-control" [(ngModel)]="desc"></textarea>
+                            <textarea id="desc" class="form-control" [(ngModel)]="description"></textarea>
                         </div>
                     </div> <!-- form-group // -->
 
@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Language</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" name="lang" id="lang" [(ngModel)]="lang">
+                            <input type="text" class="form-control" name="lang" id="lang" [(ngModel)]="language">
                         </div>
                     </div> <!-- form-group // -->
 
@@ -73,14 +73,14 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label">Book Trailer url</label>
                         <div class="col-md-3">
-                            <input type="url" class="form-control" name="trailer" id="trailer" [(ngModel)]="trailer">
+                            <input type="url" class="form-control" name="trailer" id="trailer" [(ngModel)]="booktrailer">
                         </div>
                     </div> <!-- form-group // -->
 
                     <div class="form-group">
                         <label class="col-md-3 control-label">ISBN</label>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" name="ISBN" id="ISBN" [(ngModel)]="ISBN">
+                            <input type="text" class="form-control" name="ISBN" id="ISBN" [(ngModel)]="isbn">
                         </div>
                     </div> <!-- form-group // -->
 
@@ -88,7 +88,7 @@
                     <div class="form-group">
                         <label for="Cover" class="col-md-3 control-label">Book Cover Photo</label>
                         <div class="col-md-3">
-                            <input type="file" name="bookCover" [(ngModel)]="bookCover">
+                            <input type="file" name="bookCover" [(ngModel)]="imagepath">
                         </div>
                     </div> <!-- form-group // -->
 
@@ -124,6 +124,10 @@
                     </div> <!-- form-group // -->
     
                 </form>
+                
+                <form>
+                    <input id="myForm" type="file" name="file" (change)="postMethod($event.target.files)">
+                    </form>
 
         </div><!-- panel-body // -->
     </section><!-- panel// -->

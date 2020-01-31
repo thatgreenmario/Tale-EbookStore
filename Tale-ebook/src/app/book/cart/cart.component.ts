@@ -9,28 +9,44 @@ import { BookService } from '../book.service';
 })
 export class CartComponent implements OnInit {
 
+  cartTotal = 0;
+  discount = 0;
+  booksInCart: Book[];/*= this.bookservice.getCartBooks(); */
 
-  constructor(public bookservice :BookService) { 
-    
+
+  constructor(public bookservice: BookService) {
+
   }
-
-  
-  cartTotal =0;
-  discount=0;
-  booksInCart : Book[]= this.bookservice.getCartBooks();
 
   ngOnInit() {
-      var price=0;
-      for(let i=0; i<this.booksInCart.length; i++){
-        price+=this.booksInCart[i].price;
-        this.cartTotal= price;
+    this.booksInCart=[];
+    this.bookservice.getCartBooks().then(
+      r => {
+        console.log(r);
+       /* var bookobj = JSON.stringify(r);
+        var bookObjArr = JSON.parse(bookobj);
+        console.log(bookObjArr);
+        this.booksInCart = bookObjArr;
+
+        var price = 0;
+        for (let i = 0; i < this.booksInCart.length; i++) {
+          price += this.booksInCart[i].price;
+          this.cartTotal = price;
+        }
+        console.log(this.booksInCart.length);
+*/
       }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+
+
   }
-  
-  onRemoveFromCart(event,book:Book)
-  {
-     // Item to remove
-this.booksInCart = this.booksInCart.filter(obj => obj !== book);
+
+  onRemoveFromCart(event, book: Book) {
+    // Item to remove
+    this.booksInCart = this.booksInCart.filter(obj => obj !== book);
   }
 
 }
