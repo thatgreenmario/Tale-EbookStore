@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { Observable } from 'rxjs';
+import { LoginRegisterComponent } from '../user/login-register/login-register.component';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +11,30 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean>;
-  isnotLoggedIn$:Observable<boolean>;
-  constructor(private authService: AuthService, private _elementRef:ElementRef) { }
+  isAuthor$: Observable<boolean>;
+  isAdmin$: Observable<boolean>;
+  firstName$: Observable<string>;
+
+
+
+  constructor(private authService: AuthService  ) { }
 
 
   ngOnInit() {
-     this.isLoggedIn$= this.authService.isLoggedIn;
-  }
+    
+    this.firstName$ = LoginRegisterComponent.firstName.asObservable();    
+    this.isLoggedIn$= this.authService.isLoggedIn;
+    this.isAuthor$=LoginRegisterComponent.isauthor.asObservable();
+    this.isAuthor$=LoginRegisterComponent.isadmin.asObservable();
+    }
 
   onClickLogout(){
     this.authService.logout();
+    
+    LoginRegisterComponent.isauthor.next(false);
+    LoginRegisterComponent.isadmin.next(false);
+  
+  
   }
 
 

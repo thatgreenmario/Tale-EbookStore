@@ -7,7 +7,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto blink-text-menu">
-        
+   
+        <li data-toggle="collapse" data-target=".navbar-collapse.show " class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+      <h6 class="nav-link" *ngIf="firstName$"> Hi! {{ firstName$ | async }} </h6>
+          
+        </li>
+
+         
         <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
           <a class="nav-link" routerLink="store" >Store</a>
         </li>
@@ -36,7 +42,7 @@
        </li>
  
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">
-        <a class="nav-link" routerLink="/author/home" *ngIf="isLoggedIn$ | async as isLoggedIn" >Author's Account</a>
+        <a class="nav-link" routerLink="/author/home" *ngIf="isAuthor$ | async as isAuthor" >Author's Account</a>
       </li>
      
       <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show "[routerLinkActive]="['active']">

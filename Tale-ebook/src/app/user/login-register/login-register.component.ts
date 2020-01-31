@@ -1,10 +1,17 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { AuthorService } from '../../author/author.service';
 import { HttpClient } from '@angular/common/http';
 import * as $ from 'jquery'
+import { BehaviorSubject } from 'rxjs';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-login-register',
@@ -12,6 +19,11 @@ import * as $ from 'jquery'
   styleUrls: ['./login-register.component.css']
 })
 export class LoginRegisterComponent implements OnInit {
+
+
+  static  isauthor: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  static  isadmin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  static  firstName: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   login_email: string;
   login_password: string;
@@ -29,16 +41,22 @@ export class LoginRegisterComponent implements OnInit {
     s.type = "text/javascript";
     s.src = "../../../assets/pages/login.js";
     this._elementRef.nativeElement.appendChild(s);
-
   }
 
-
+  
   onLogin(form: NgForm) {
 
+    LoginRegisterComponent.firstName.next("firstname");
     var user = {
       "email": this.login_email,
       "password": this.login_password
     };
+
+    
+    if(this.login_email=="Tana" && this.login_password=="123")
+    {
+      LoginRegisterComponent.isadmin.next(true);
+    }
 
     this.authService.login(user).then(
       r => {
@@ -61,11 +79,17 @@ export class LoginRegisterComponent implements OnInit {
                 console.log(r);
                 if (r !== null)
                 {
+                  LoginRegisterComponent.isauthor.next(true);
                   sessionStorage.setItem("authorID",r["authorId"] );
                   console.log("sesssion element",sessionStorage.getItem("authorID"));
                 }
                 else
+                {
+                  
+                  LoginRegisterComponent.isauthor.next(false);
                   console.log("error fetching author data");
+              
+                }
               }
             ).catch(e => {
               console.log('error fetching data');
@@ -82,6 +106,7 @@ export class LoginRegisterComponent implements OnInit {
     ).catch(e => {
       alert("Username or Password is Incorrect Please Try Again!");
     });
+    LoginRegisterComponent.firstName.next(user.email);
   }
 
 
@@ -102,6 +127,7 @@ export class LoginRegisterComponent implements OnInit {
       "password": this.reg_password,
       "isAuthor": this.checkAuthor
     };
+
 
     this.authService.createUser(user).then(
       r => {
@@ -133,7 +159,5 @@ export class LoginRegisterComponent implements OnInit {
         alert('error fetching data');
       });
     }
-
   }
-
 }
