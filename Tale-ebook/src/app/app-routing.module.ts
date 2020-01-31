@@ -15,6 +15,7 @@ import { AuthorComponent } from './author/author.component';
 import { WishlistComponent } from './book/wishlist/wishlist.component';
 import { DescribelistComponent } from './book/store/describelist/describelist.component';
 import { PaymentGatewayComponent } from './book/payment-gateway/payment-gateway.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: "userLogin", component: LoginRegisterComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "cart", component: CartComponent, canActivate: [AuthGuard]},
   { path: "prevOrders", component: PrevOrdersComponent  ,canActivate: [AuthGuard]},
   { path: "wishlist", component: WishlistComponent, canActivate: [AuthGuard]},
+  { path: "adminDashboard", component: DashboardComponent},
   
   //{ path: '**', component: PageNotFoundComponent }
 ];
