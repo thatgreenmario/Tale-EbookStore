@@ -60,7 +60,7 @@ export class LoginRegisterComponent implements OnInit {
 
     this.authService.login(user).then(
       r => {
-        console.log(r);
+        console.log("check",r);
         if (r !== null) {
          
           if (r["isAuthor"] == 0) {
@@ -100,6 +100,10 @@ export class LoginRegisterComponent implements OnInit {
 
             sessionStorage.setItem("authorName", r["firstname"] + " " + r["lastname"]);
             sessionStorage.setItem("authorEmail", this.login_email);
+            sessionStorage.setItem("username", r["firstname"]);  
+            sessionStorage.setItem("username_l", r["lastname"]);  
+            sessionStorage.setItem("userId", r["id"]);  
+            sessionStorage.setItem("userMail", r["email"]);  
           }
           this.router.navigate(['/store']);
         }
