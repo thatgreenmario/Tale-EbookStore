@@ -14,5 +14,7 @@ public interface IUserServices {
 	@Transactional
 	public User editUser(User user);
 	public List<Book> getUserBooks(int userId);
+	@Transactional
+	public boolean addnewUserHistory(User user, String isbn);
 
 }

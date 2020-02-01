@@ -26,6 +26,7 @@ import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 import com.app.core.daos.IBookDAO;
+import com.app.core.daos.IUserDAO;
 import com.app.core.pojos.Authors;
 import com.app.core.pojos.Book;
 import com.app.core.pojos.User;
@@ -37,6 +38,12 @@ public class Mailer {
 
 	@Autowired
 	private IBookDAO dao;
+	
+	@Autowired
+	private IUserDAO userdao;
+	
+	@Autowired
+	private IUserServices userServices;
 
 	public String getContent(UserBookMap uBookMap) {
 
@@ -48,7 +55,8 @@ public class Mailer {
 		 */
 
 		String userdetails = uBookMap.getUser().getFirstname() + " " + uBookMap.getUser().getLastname();
-
+		
+		
 		String bookdetails = "";
 		int grandtotal = 0;
 
@@ -56,6 +64,12 @@ public class Mailer {
 
 		String[] kSet = bookMap.keySet().toArray(new String[bookMap.size()]);
 
+		
+		User user = userdao.getOne(uBookMap.getUser().getId());
+		for(String str: kSet)
+			userServices.addnewUserHistory(user, str);
+		
+		
 		for (int i = 0; i < kSet.length; i++) {
 			Book temp = new Book();
 			temp.setIsbn(kSet[i]);

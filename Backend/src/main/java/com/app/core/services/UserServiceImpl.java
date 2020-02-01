@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.core.daos.IBookDAO;
 import com.app.core.daos.IUserDAO;
+import com.app.core.pojos.Authors;
 import com.app.core.pojos.Book;
 import com.app.core.pojos.User;
 import com.app.core.pojos.UserHistory;
@@ -108,10 +109,36 @@ public class UserServiceImpl implements IUserServices {
 		List<Book> userBookList = new ArrayList<Book>();
 
 		for (UserHistory ele : userHistory) {
+			if(bookDao.findById(ele.getBookId()).isPresent())
 			userBookList.add(bookDao.findById(ele.getBookId()).get());
 		}
 
 		return userBookList;
+	}
+
+	@Override
+	public boolean addnewUserHistory(User user, String isbn) {
+
+		User temp = new User();
+		temp.setId(user.getId());
+		
+		Example<User> exampleUser = Example.of(temp);
+		Optional<User> optional = dao.findOne(exampleUser);
+		
+		Book tempBook = new Book();
+		tempBook.setIsbn(isbn);
+		
+		Example<Book> exampleBook = Example.of(tempBook);
+		Optional<Book> optionalBook = bookDao.findOne(exampleBook);
+
+		
+		
+		if (optional.isPresent() && optionalBook.isPresent()) {
+			optional.get().setUserHistory(optionalBook.get().getId());
+			return true;
+		}
+
+		return false;
 	}
 
 }
