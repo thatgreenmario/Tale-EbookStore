@@ -8,8 +8,8 @@
                     <div class="col-md-12">
                         <div>
                             <img class="img-round" src="/assets/icons/user.jpg" alt="Texto Alternativo">
-                            <h2>John Doe</h2>
-                            <p>johndoe@gmail.com</p>
+                            <h2>{{fname}} {{lname}}</h2>
+                            <p>{{userMail}}</p>
                         </div>
                     </div>
                 </div>
@@ -25,13 +25,13 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="fname" id="fname" class="form-control input-lg"
-                                            placeholder="First Name" ngModel #fnameInput="ngModel" required>
+                                            placeholder="First Name" [(ngModel)]="fname" required>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="lname" id="lname" class="form-control input-lg"
-                                            placeholder="Last Name" ngModel #lnameInput="ngModel" required>
+                                            placeholder="Last Name" [(ngModel)]="lname" required>
                                     </div>
                                 </div>
                             </div>
@@ -39,15 +39,13 @@
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <input type="password" name="password" id="password"
-                                            class="form-control input-lg" placeholder="Current Password" ngModel
-                                            #passwordInput="ngModel" required minlength="8">
+                                            class="form-control input-lg" placeholder="Current Password" [(ngModel)]="old_password" required minlength="8">
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <input type="password" name="newpassword" id="newpassword"
-                                            class="form-control input-lg" placeholder="New Password" ngModel
-                                            #newpasswordInput="ngModel" required minlength="8">
+                                            class="form-control input-lg" placeholder="New Password" [(ngModel)]="new_password" required minlength="8">
                                     </div>
                                 </div>
                             </div>

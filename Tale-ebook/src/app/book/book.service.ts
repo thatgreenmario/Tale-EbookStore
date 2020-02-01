@@ -84,8 +84,14 @@ export class BookService {
   }
 
 
-  getLibraryBooks() {
-    return this.booksInLibrary;
+  getLibraryBooks(userid) {
+    return this.http.get("http://localhost:5000/getuserhistory/"+userid).toPromise()
+    .then(r => {
+      console.log("here");
+      return r;
+    }).catch(error => {
+      return Promise.reject(error);
+    });
   }
 
 
@@ -98,6 +104,17 @@ export class BookService {
 
   getBookDetails() {
     return this.book;
+  }
+
+  generatebill(userBookMap)
+  {
+    return this.http.post("http://localhost:5000/generatebill",userBookMap).toPromise()
+    .then(r => {
+      console.log("here");
+      return r;
+    }).catch(error => {
+      return Promise.reject(error);
+    });
   }
 
 }

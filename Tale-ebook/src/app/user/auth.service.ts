@@ -69,13 +69,14 @@ ngInit(){
 
 
 
-  EditProfile(fname: string, lname: string, oldPassword: string, newPassword: string) {
-    if (oldPassword == newPassword)
-      return "Old Password and New Password Should not be same!!!";
-    if (oldPassword == "johnDoe1234")
-      return "Password Changed Successfully!";
-    else
-      return "Old Password does not match!!";
+  EditProfile(user) {
+    return this.http.post("http://localhost:5000/edituser", user).toPromise()
+      .then(r => {
+        console.log(r);
+        return r;
+      }).catch(error => {
+        return Promise.reject(error);
+      });
   }
 
 

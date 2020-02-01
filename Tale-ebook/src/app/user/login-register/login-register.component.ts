@@ -65,7 +65,9 @@ export class LoginRegisterComponent implements OnInit {
          
           if (r["isAuthor"] == 0) {
             sessionStorage.setItem("username", r["firstname"]);  
+            sessionStorage.setItem("username_l", r["lastname"]);  
             sessionStorage.setItem("userId", r["id"]);  
+            sessionStorage.setItem("userMail", r["email"]);  
           }
           else {
 

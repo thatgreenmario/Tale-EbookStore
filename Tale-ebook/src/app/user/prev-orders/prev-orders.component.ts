@@ -15,7 +15,7 @@ export class PrevOrdersComponent implements OnInit {
   }
 
   
-  booksPurchased : Book[]= this.bookservice.getLibraryBooks();
+  //booksPurchased : Book[]= this.bookservice.getLibraryBooks();
 
   ngOnInit() {
   }
