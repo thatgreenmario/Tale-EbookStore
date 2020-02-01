@@ -12,21 +12,6 @@
     </section>
     
     
-    <div >
-        <section class="page-header" *ngIf="booksPurchased.length<1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="empty-cart" >
-                            <h1 class="page-name">No Orders Yet.</h1>
-                            <small>What are you waiting for?</small>    
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-    
     
     
     <div class="page-wrapper" *ngIf="booksPurchased.length>0">
@@ -51,7 +36,7 @@
                                                 <td class="">
                                                     <div class="product-info">
                                                         <img width="80" src="{{book.imagePath}}" alt="" />
-                                                        <a>{{ book.title }} : <small>{{book.author}}</small></a> 
+                                                        <a>{{ book.title }}  <small>{{book.authorName}}</small></a> 
                                                     </div>
                                                 </td>
                                                 <td class="">₹{{ book.price }}</td>
