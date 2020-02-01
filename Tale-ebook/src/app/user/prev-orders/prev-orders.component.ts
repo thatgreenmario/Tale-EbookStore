@@ -10,15 +10,43 @@ import { Book } from '../../book/book.model';
 })
 export class PrevOrdersComponent implements OnInit {
 
-  constructor(public bookservice :BookService) { 
+  constructor(public bookService :BookService) { 
     
   }
 
   
-  //booksPurchased : Book[]= this.bookservice.getLibraryBooks();
+  booksPurchased : Book[]=[];
 
   ngOnInit() {
+
+    var userid = sessionStorage.getItem("userId");
+    this.bookService.getLibraryBooks(userid).then(
+      r => {
+        console.log(r);
+        var bookobj = JSON.stringify(r);
+        var bookObjArr = JSON.parse(bookobj);
+        console.log(bookObjArr);
+        //this.booksInCart = bookObjArr;
+  
+        this.booksPurchased = bookObjArr;
+        
+        /*var price = 0;
+        for (let i = 0; i < this.booksInCart.length; i++) {
+          price += this.booksInCart[i].price;
+          this.cartTotal = price;
+        }
+        console.log(this.booksInCart.length);
+  */
+      }
+    ).catch(e => {
+      alert('error fetching data');
+    }
+    );
+  
   }
   
+
+
+
 }
 

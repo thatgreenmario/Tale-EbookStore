@@ -8,9 +8,6 @@
                 <select name="searchBy" class="dropdown dropdown-lg dropdwn form-control col-md-2" [(ngModel)]="searchBy">
                     <option disabled >Search By</option>
                     <option value="name">Name</option>
-                    <option value="author">Author</option>
-                    <option value="ISBN">ISBN</option>
-               
                 </select>
                 <input type="submit" value="Search" class="submitBtn form-control col-md-2">
             </div>
@@ -21,7 +18,7 @@
             <select class="dropdown dropdown-lg dropdwn form-control col-md-2 btnspace"
             (change)="onSort($event.target.value)">
             <option disabled>Sort By</option>
-            <option value="name" >Name</option>
+            <option value="Name" >Name</option>
             <option value="authorName">Author</option>
             <option value="price">Price-low to high</option>
         </select>
