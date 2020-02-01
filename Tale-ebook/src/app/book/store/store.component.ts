@@ -63,23 +63,23 @@ export class StoreComponent implements OnInit {
 
   }
 
-  // sortbyName() {
-  //   console.log(this.books);
-  //   var sortedArr = this.books.sort((book1, book2) => {
-  //     if (book1.title.trim() > book2.title.trim()) {
-  //       return 1;
-  //     }
-  //     if (book1.title.trim() < book2.title.trim()) {
-  //       return -1;
-  //     }
-  //     return 0;
-  //   });
+  sortbyName() {
+    console.log(this.books);
+    var sortedArr = this.books.sort((book1, book2) => {
+      if (book1.title.trim() > book2.title.trim()) {
+        return 1;
+      }
+      if (book1.title.trim() < book2.title.trim()) {
+        return -1;
+      }
+      return 0;
+    });
 
-  //   this.books = sortedArr;
+    this.books = sortedArr;
 
-  //   console.log(this.books, "sorted");
+    console.log(this.books, "sorted");
 
-  // }
+  }
 
   // sortbyAuthor() {
   //   var sortedArr = this.books.sort((book1, book2) => {
@@ -155,23 +155,26 @@ export class StoreComponent implements OnInit {
 
 
   //On sort
-  onSort(val){
-
-if(val=="name")
-{
-  var sortedArr = this.books.sort((book1, book2) => {
-    if (book1.title.trim() > book2.title.trim()) {
-      return 1;
+  onSort(val:string){
+    
+    if(val=="Name"){
+    
+      var sortedArr = this.books.sort((book1, book2) => {
+        if(book1.title != null){
+        if (book1.title.trim() > book2.title.trim()) {
+          return 1;
+        }
+        if (book1.title.trim() < book2.title.trim() ){
+          return -1;
+        }
+        return 0;
+      }});
+  
+      this.books = sortedArr;
+  
+      console.log(this.books, "sorted");
+  
     }
-    if (book1.title.trim() < book2.title.trim()) {
-      return -1;
-    }
-    return 0;
-  });
-
-  this.books = sortedArr;
-
-}
 if(val=="authorName")
 {
 
