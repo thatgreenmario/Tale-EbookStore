@@ -33,7 +33,7 @@ ngInit(){
   
     console.log(user);
 
-    return this.http.post("http://localhost:5000/authenticate", user).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/authenticate", user).toPromise()
       .then(r => {
         if (r !== null) {
           console.log(r);
@@ -50,7 +50,7 @@ ngInit(){
 
 
   createUser(user) {
-    return this.http.post("http://localhost:5000/register", user).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/register", user).toPromise()
       .then(r => {
         console.log(r);
         return r;
@@ -70,7 +70,7 @@ ngInit(){
 
 
   EditProfile(user) {
-    return this.http.post("http://localhost:5000/edituser", user).toPromise()
+    return this.http.post("http://taleebookstore-env.hc4k2mbcsp.ap-south-1.elasticbeanstalk.com/edituser", user).toPromise()
       .then(r => {
         console.log(r);
         return r;

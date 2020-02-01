@@ -169,9 +169,9 @@ exports.deletefrom_Cart = function (req, res) {
 
     req.on('end', function () {
 
-      var abc = JSON.parse(jsonString);
+      //var abc = JSON.parse(jsonString);
       //console.log(JSON.parse(jsonString));
-      console.log(abc.books);
+    //  console.log(abc.books);
 
       //********************************************/
 
@@ -182,7 +182,9 @@ exports.deletefrom_Cart = function (req, res) {
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         var dbo = db.db("cart");
+        dbo.collection('cart').deleteMany({})
 
+/*
         dbo.collection('cart')
           .updateOne(
             { "_id": abc._id }, // Filter
@@ -190,7 +192,7 @@ exports.deletefrom_Cart = function (req, res) {
             { multi: true } // add document with req.body._id if not exists 
 
           )
-
+*/
         res.write('Request Successfull');
         res.end();
 
@@ -264,7 +266,7 @@ exports.addto_Wishlist = function (req, res) {
     });
   }
 }
-
+/*
 exports.deletefrom_Wishlist = function (req, res) {
 
   if (req.method == 'DELETE') {
@@ -280,7 +282,6 @@ exports.deletefrom_Wishlist = function (req, res) {
       //console.log(JSON.parse(jsonString));
       console.log(abc.books);
 
-      //********************************************/
 
       var MongoClient = require('mongodb').MongoClient;
       //var url = "mongodb://localhost:27017/";
@@ -289,7 +290,10 @@ exports.deletefrom_Wishlist = function (req, res) {
       MongoClient.connect(url, function (err, db) {
         if (err) throw err;
         var dbo = db.db("wishlist");
-
+       
+        dbo.collection('cart').deleteMany({})
+      }
+     
         dbo.collection('wishlist')
           .updateOne(
             { "_id": abc._id }, // Filter
@@ -297,7 +301,7 @@ exports.deletefrom_Wishlist = function (req, res) {
             { upsert: true } // add document with req.body._id if not exists 
 
           )
-
+        
         res.write('Request Successfull');
         res.end();
 
@@ -308,3 +312,4 @@ exports.deletefrom_Wishlist = function (req, res) {
     });
   }
 }
+*/
