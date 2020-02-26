@@ -48,9 +48,6 @@
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
-* [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
-
 
 
 <!-- ABOUT THE PROJECT -->
