@@ -2,20 +2,13 @@
 
 
 
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
+
 
 <a href="https://github.com/thatgreenmario/Tale-EbookStore/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/thatgreenmario/Tale-EbookStore"></a>
 <a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/thatgreenmario/Tale-EbookStore"></a>
 <a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/badge/Stars-136-brightgreen"></a>
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+
 
 
 
