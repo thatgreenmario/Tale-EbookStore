@@ -6,7 +6,7 @@
 
 <a href="https://github.com/thatgreenmario/Tale-EbookStore/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/thatgreenmario/Tale-EbookStore"></a>
 <a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/thatgreenmario/Tale-EbookStore"></a>
-<a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/badge/Stars-136-brightgreen"></a>
+<a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/badge/Commits-136-brightgreen"></a>
 [![MIT License][license-shield]][license-url]
 
 
