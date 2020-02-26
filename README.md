@@ -1,15 +1,3 @@
-<!--
-*** Thanks for checking out this README Template. If you have a suggestion that would
-*** make this better, please fork the Tale-EbookStore and create a pull request or simply open
-*** an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** thatgreenmario, Tale-EbookStore, twitter_handle, oj1696@gmail.com
--->
-
 
 
 
@@ -22,10 +10,10 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+
+<a href="https://github.com/thatgreenmario/Tale-EbookStore/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/thatgreenmario/Tale-EbookStore"></a>
+<a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/thatgreenmario/Tale-EbookStore"></a>
+<a href="https://github.com/thatgreenmario/Tale-EbookStore/issues"><img alt="GitHub issues" src="https://img.shields.io/badge/Stars-136-brightgreen"></a>
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
